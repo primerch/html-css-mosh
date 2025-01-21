@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-      name="viewport" />
+      name="viewport"
+    />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>Document</title>
     <style>
@@ -14,13 +15,19 @@
     </style>
   </head>
   <body>
-    <!-- 1. <video>: controls, autoplay, loop -->
-    <video autoplay controls loop src="./videos/ocean.mp4">
-      <!-- 2. provide fallback text if the browser doesn't support <video> -->
+    <!-- =========================================================== -->
+    <!--                   1. <video>: controls, autoplay, loop, mute   -->
+    <!-- =========================================================== -->
+    <video autoplay controls loop mute src="./videos/ocean.mp4">
+      <!-- =========================================================== -->
+      <!--                   2. Fallback text                      -->
+      <!-- =========================================================== -->
       Your browser doesn't support videos.
     </video>
 
-    <!-- 3. <audio>: controls, autoplay, loop -->
-    <audio src=""></audio>
+    <!-- =========================================================== -->
+    <!--                   3. <audio>: controls, autoplay, loop, mute    -->
+    <!-- =========================================================== -->
+    <audio autoplay controls loop mute src=""></audio>
   </body>
 </html>
