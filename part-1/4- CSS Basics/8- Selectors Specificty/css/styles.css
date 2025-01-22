@@ -1,50 +1,54 @@
-/* Specificity Notes:
-1. Selector specificity hierarchy: ID selectors > class & attribute selectors & pseudo-class selectors > type selectors & pseudo-elements
-2. Specificity format: (a, b, c)
-   a: Number of ID selectors
-   b: Number of class/attribute selectors and pseudo-classes
-   c: Number of type selectors and pseudo-elements
-3. Example: A specificity of (1, 1, 2) translates to a numeric value of 112.
-*/
+/* =========================================================== */
+/*   Specificity Notes:                                        */
+/*   1. ID > Class/Attribute/Pseudo-Class > Type/Pseudo-Element */
+/*   2. Format: (a, b, c) - IDs (a), Classes/Attributes/Pseudo-Classes (b), Types/Pseudo-Elements (c) */
+/* =========================================================== */
 
-/*
-1. Specificity: (0, 0, 1)!
-   Applying style with !important (avoid using this as it overrides all other specificity)
-*/
+/* =========================================================== */
+/* 1. h1: Specificity (0, 0, 1)! Uses !important (avoid)       */
+/*    Applies to all <h1> elements and overrides all other     */
+/*    styles due to !important. Avoid using this unless        */
+/*    absolutely necessary as it breaks the natural cascade.   */
+/* =========================================================== */
 h1 {
-  color: dodgerblue !important;
+    color: dodgerblue !important;
 }
 
-/*
-2. Specificity: (0, 1, 0)
-   Class selector: .highlight
-*/
+/* =========================================================== */
+/* 2. .highlight: Specificity (0, 1, 0) - Class selector       */
+/*    Applies to any element with the class "highlight".       */
+/*    Use for reusable styling across multiple elements.       */
+/* =========================================================== */
 .highlight {
-  color: deeppink;
+    color: deeppink;
 }
 
-/*
-3. Specificity: (1, 0, 0)
-   ID selector: #products
-*/
+/* =========================================================== */
+/* 3. #products: Specificity (1, 0, 0) - ID selector           */
+/*    Applies to the element with the unique ID "products".    */
+/*    IDs should always be unique within the document.         */
+/* =========================================================== */
 #products {
-  color: green;
+    color: green;
 }
 
-/*
-4. Specificity: (1, 0, 1)
-   ID selector: #products
-   Element selector: h1
-*/
+/* =========================================================== */
+/* 4. h1#products: Specificity (1, 0, 1) - ID + Type selector  */
+/*    Applies only to <h1> elements with the ID "products".    */
+/*    Combines type and ID selectors for greater specificity.  */
+/*    Use when the ID needs to be scoped to a specific element type. */
+/* =========================================================== */
 h1#products {
-  color: coral;
+    color: coral;
 }
 
-/*
-5. Specificity: (1, 1, 0)
-   Class selector: .featured
-   ID selector: #products
-*/
+/* =========================================================== */
+/* 5. .featured #products: Specificity (1, 1, 0) - ID + Class  */
+/*    Applies to the element with the ID "products" when it    */
+/*    is a descendant of an element with the class "featured". */
+/*    Useful for context-dependent styling, especially when    */
+/*    the same ID appears in different contexts.               */
+/* =========================================================== */
 .featured #products {
-  color: purple;
+    color: purple;
 }
