@@ -1,27 +1,45 @@
 .box {
   width: 600px;
   height: 200px;
-  /* 1. Linear gradient */
-  background: linear-gradient(dodgerblue, yellow);
 
-  /* 2. Linear gradient with specified direction */
-  background: linear-gradient(to right, dodgerblue, yellow);
-  background: linear-gradient(to bottom right, dodgerblue, yellow);
+  /* ======================================================= */
+  /*                  1. Linear Gradient                     */
+  /* ======================================================= */
+  /* background: linear-gradient(dodgerblue, yellow); */
 
-  /* 3. Linear gradient with color stop */
-  background: linear-gradient(45deg, dodgerblue, yellow 30%);
+  /* ======================================================= */
+  /*           2. Linear Gradient with Direction             */
+  /* ======================================================= */
+  /* background: linear-gradient(to right, dodgerblue, yellow); */
+  /* background: linear-gradient(to bottom right, dodgerblue, yellow); */
 
-  /* 4. Linear gradient with multiple colors */
-  background: linear-gradient(45deg, dodgerblue, yellow, tomato);
+  /* ======================================================= */
+  /*          3. Linear Gradient with Color Stops            */
+  /* ======================================================= */
+  /* background: linear-gradient(90deg, dodgerblue 50%, yellow 50%);*/
 
-  /* 5. Radial gradient */
-  background: radial-gradient(white, yellow);
+  /* ======================================================= */
+  /*         4. Linear Gradient with Multiple Colors         */
+  /* ======================================================= */
+  /* background: linear-gradient(45deg, dodgerblue, yellow, tomato); */
 
-  /* 6. Radial gradient with circle shape */
-  background: radial-gradient(circle, white, yellow);
+  /* ======================================================= */
+  /*                  5. Radial Gradient                     */
+  /* ======================================================= */
+  /* background: radial-gradient(white, yellow); */
 
-  /* 7. Radial gradient with specified position */
-  background: radial-gradient(circle at top left, white, yellow);
+  /* ======================================================= */
+  /*          6. Radial Gradient with Circle Shape           */
+  /* ======================================================= */
+  /* background: radial-gradient(circle, white, yellow); */
 
-  /* 8. Online gradient generator: cssgradient.io */
+  /* ======================================================= */
+  /*      7. Radial Gradient with Specified Position         */
+  /* ======================================================= */
+  /* background: radial-gradient(circle at top left, white, yellow); */
+
+  /* ======================================================= */
+  /*           8. Online Gradient Generator                  */
+  /* ======================================================= */
+  /* Use tools like cssgradient.io for advanced gradients. */
 }
