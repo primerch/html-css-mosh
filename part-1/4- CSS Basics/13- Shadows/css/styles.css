@@ -4,17 +4,22 @@
   margin: 10px;
   background: dodgerblue;
 
-  /* 1. box-shadow: x-offset y-offset blur-radius color */
+  /* ======================================================= */
+  /* 1. Box Shadow: x-offset, y-offset, blur-radius, color   */
+  /* ======================================================= */
   box-shadow: 10px 10px 30px grey;
 
-  /* 2. Full element shadow */
+  /* ======================================================= */
+  /* 2. Full Element Shadow                                  */
+  /* ======================================================= */
   box-shadow: 0 0 30px grey;
 }
 
 h1 {
   color: white;
-  /* 1. text-shadow: x-offset y-offset blur-radius color */
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
-  /* 2. Semi-transparent black text shadow */
+
+  /* ======================================================= */
+  /* 1. Semi-Transparent Black Text Shadow                  */
+  /* ======================================================= */
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
