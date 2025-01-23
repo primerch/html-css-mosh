@@ -1,17 +1,32 @@
+/* =========================================================== */
+/*                     1. Inherited Property                  */
+/* =========================================================== */
 p {
-  /* 1. Inherited property */
-  color: dodgerblue;
-
-  /* 2. Non-inherited property */
-  border: 1px solid black;
-
-  strong {
-    /* 3. Reset inherited property */
-    color: initial;
-
-    /* 4. Force inheritance of border */
-    border: inherit;
-  }
-
-  /* 5. Typically inherited properties are typography-related */
+  color: dodgerblue; /* Color property is inherited */
 }
+
+/* =========================================================== */
+/*                  2. Non-Inherited Property                 */
+/* =========================================================== */
+p {
+  border: 1px solid black;
+}
+
+/* =========================================================== */
+/*                 3. Reset Inherited Property                */
+/* =========================================================== */
+p strong {
+  color: initial;
+}
+
+/* =========================================================== */
+/*               4. Force Inheritance of Border               */
+/* =========================================================== */
+p strong {
+  border: inherit;
+}
+
+/* =========================================================== */
+/* 5. Typically Inherited Properties Are Typography-Related    */
+/* =========================================================== */
+/* Typography-related properties such as font-size, font-family, etc., are inherited by default */
