@@ -3,25 +3,44 @@
   height: 200px;
   background: dodgerblue;
 
-  /* 1. Border settings */
-  border: 10px dashed royalblue; /* Alternatives: solid, dotted */
+  /* ======================================================= */
+  /*         1. Border Settings: solid, dotted, dashed,      */
+  /*            double, groove, etc.                         */
+  /* ======================================================= */
+  border: 10px royalblue; /* Alternatives: solid, dotted, dashed */
 
-  /* 2. Individual border sides */
+  /* ======================================================= */
+  /*            2. Individual Border Sides                  */
+  /* ======================================================= */
   border-top: 20px dashed royalblue;
 
-  /* 3. Border width: top, right, bottom, left */
-  border-width: 10px 20px 10px 20px;
-  border-width: 10px 20px 10px;
-  border-width: 10px 20px;
-  border-width: 10px;
+  /* ======================================================= */
+  /*       3. Border Width: Top, Right, Bottom, Left         */
+  /* ======================================================= */
+  /* Clockwise Rule (T-R-B-L): Values apply in this order:
+     - 4 values: top, right, bottom, left
+     - 3 values: top, right+left, bottom
+     - 2 values: top+bottom, right+left
+     - 1 value: all sides
+     Mnemonic: T-R-B-L ("trouble") */
+  border-width: 10px 20px 10px 20px; /* Top: 10px, Right: 20px, Bottom: 10px, Left: 20px */
+  border-width: 10px 20px 10px;      /* Top: 10px, Right & Left: 20px, Bottom: 10px */
+  border-width: 10px 20px;           /* Top & Bottom: 10px, Right & Left: 20px */
+  border-width: 10px;                /* All sides: 10px */
 
-  /* 4. Border style */
+  /* ======================================================= */
+  /*                4. Border Style                         */
+  /* ======================================================= */
   border-style: dashed;
 
-  /* 5. Border color */
+  /* ======================================================= */
+  /*                5. Border Color                         */
+  /* ======================================================= */
   border-color: red;
 
-  /* 6. Border radius: use 100% for circles */
+  /* ======================================================= */
+  /*        6. Border Radius: Use 100% for Circles          */
+  /* ======================================================= */
   border-radius: 200px;
   border-radius: 100%;
 }
