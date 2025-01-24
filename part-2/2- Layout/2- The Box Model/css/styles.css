@@ -1,11 +1,35 @@
+/* =========================================================== */
+/*                     1. Padding Order                       */
+/* Note: Padding values are set in clockwise order:            */
+/*       top, right, bottom, left.                             */
+/* =========================================================== */
 p {
-  /* 1. Padding order: top, right, bottom, left */
   padding: 10px 20px 10px 20px;
-
-  /* 2. Changing CSS directly in the browser adds an inline style to the DOM */
-
-  /* 3. Margins combine when they touch, reducing overall space (margin collapsing) */
-  margin: 20px;
-
-  /* 4. Use margin to separate elements; use padding for space between the border and content */
 }
+
+/* =========================================================== */
+/*                    2. Margin Collapsing                    */
+/* Note: Collapsing applies only to vertical margins of        */
+/*       adjacent elements, reducing combined space.           */
+/* =========================================================== */
+p {
+  padding: 20px;
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 20px;
+}
+
+/* =========================================================== */
+/*                    3. Inline Styles                        */
+/* Note: Editing CSS in the browser creates inline styles in   */
+/*       the DOM.                                              */
+/* =========================================================== */
+
+/* =========================================================== */
+/*                4. Margin vs Padding                        */
+/* Note: Use margin for spacing between elements and padding   */
+/*       for spacing inside the border.                       */
+/* =========================================================== */
