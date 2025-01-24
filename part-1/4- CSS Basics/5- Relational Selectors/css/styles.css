@@ -2,9 +2,9 @@
 /*!*           1. Descendant Combinator:                        *!*/
 /*!*           Selects all <p> elements inside #products         *!*/
 /*!* =========================================================== *!*/
-/*#products p {*/
-/*  color: orange;*/
-/*}*/
+#products p {
+  color: orange;
+}
 
 /* =========================================================== */
 /*           2. Child Combinator:                             */
