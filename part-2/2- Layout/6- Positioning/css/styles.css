@@ -14,7 +14,7 @@ html {
 
 .boxs {
   border: 3px solid lightgrey;
-  position: relative; /* Parent element is "positioned" for .box-two */
+  position: relative; /* Makes .box-two's absolute positioning relative to this container */
 }
 
 .box {
@@ -24,44 +24,41 @@ html {
 
 /* =========================================================== */
 /*                   Relative Positioning                     */
-/* Note: Positioned relative to its own normal position.       */
+/* Note: Moves the element relative to its original position.  */
 /*       - Remains in the normal document flow.                */
 /*       - Offsets do not affect surrounding elements.         */
 /* =========================================================== */
 .box-one {
   background-color: gold;
-  position: relative; /* Offsets from its original position */
-  left: 4rem;         /* Moves 4rem (40px) to the right */
-  top: 4rem;          /* Moves 4rem (40px) downward */
-  z-index: -1;        /* Moves element below others in stacking order */
+  position: relative; /* Moves based on its normal position */
+  left: 4rem;         /* 4rem (40px) to the right */
+  top: 4rem;          /* 4rem (40px) downward */
+  z-index: -1;        /* Stacks behind elements with higher z-index */
 }
 
 /* =========================================================== */
 /*                   Absolute Positioning                     */
-/* Note: Positioned relative to the nearest positioned parent */
-/*       (one with position: relative, absolute, or fixed).    */
-/*       - Removed from the normal document flow.              */
-/*       - Does not occupy space in the layout.                */
+/* Note: Removed from the normal document flow.                */
+/*       Positioned relative to the nearest positioned parent. */
 /* =========================================================== */
 .box-two {
   background-color: tomato;
-  position: absolute; /* Positioned relative to .boxs */
+  position: absolute; /* Positioned relative to .boxs (the nearest positioned ancestor) */
   right: 0;           /* Aligns to the right edge of the parent */
   bottom: 0;          /* Aligns to the bottom edge of the parent */
 }
 
 /* =========================================================== */
 /*                     Fixed Positioning                      */
-/* Note: Positioned relative to the viewport and remains      */
-/*       fixed even when scrolling.                           */
-/*       - Removed from the normal document flow.              */
-/*       - Does not occupy space in the layout.                */
+/* Note: Removed from the normal document flow.                */
+/*       Positioned relative to the viewport.                  */
+/*       Remains fixed even when scrolling.                    */
 /* =========================================================== */
 .box-three {
   background-color: dodgerblue;
-  position: fixed;    /* Positioned relative to the viewport */
-  top: 0;             /* Sticks to the top of the viewport */
-  left: 2rem;         /* 2rem (20px) from the left of the viewport */
-  right: 2rem;        /* 2rem (20px) from the right of the viewport */
-  width: auto;        /* Automatically adjusts based on left and right */
+  position: fixed;    /* Sticks to the viewport */
+  top: 0;             /* 0px from the top of the viewport */
+  left: 2rem;         /* 2rem (20px) from the left */
+  right: 2rem;        /* 2rem (20px) from the right */
+  width: auto;        /* Stretches to fill space between left and right */
 }
