@@ -1,6 +1,7 @@
 /* =========================================================== */
 /*               Default Positioning: Static                  */
 /* Note: Elements are static by default (not positioned).      */
+/*       They remain in the normal document flow.              */
 /* =========================================================== */
 * {
   box-sizing: border-box;
@@ -24,7 +25,8 @@ html {
 /* =========================================================== */
 /*                   Relative Positioning                     */
 /* Note: Positioned relative to its own normal position.       */
-/*       Does not affect surrounding elements.                */
+/*       - Remains in the normal document flow.                */
+/*       - Offsets do not affect surrounding elements.         */
 /* =========================================================== */
 .box-one {
   background-color: gold;
@@ -38,7 +40,8 @@ html {
 /*                   Absolute Positioning                     */
 /* Note: Positioned relative to the nearest positioned parent */
 /*       (one with position: relative, absolute, or fixed).    */
-/*       Removed from normal document flow.                   */
+/*       - Removed from the normal document flow.              */
+/*       - Does not occupy space in the layout.                */
 /* =========================================================== */
 .box-two {
   background-color: tomato;
@@ -50,7 +53,9 @@ html {
 /* =========================================================== */
 /*                     Fixed Positioning                      */
 /* Note: Positioned relative to the viewport and remains      */
-/*       fixed when scrolling.                                */
+/*       fixed even when scrolling.                           */
+/*       - Removed from the normal document flow.              */
+/*       - Does not occupy space in the layout.                */
 /* =========================================================== */
 .box-three {
   background-color: dodgerblue;
