@@ -1,0 +1,51 @@
+/* =========================================================== */
+/*                    Root Font Size Setup                    */
+/* Note: Set root font size to 62.5% (1rem = 10px) for easier  */
+/*       rem-based calculations.                              */
+/* =========================================================== */
+
+html {
+  font-size: 62.5%; /* 62.5% of 16px = 10px */
+}
+
+/* =========================================================== */
+/*                        Box Styling                         */
+/* Note: Demonstrating width and height with various units.   */
+/* =========================================================== */
+
+.box {
+  /* Default behavior:
+     - Width: Expands to fill the parent container.
+     - Height: Defaults to zero if no content or explicit height is set. */
+
+  /* === 1. Fixed Dimensions (px) === */
+  width: 100px; /* Fixed size: 100px width */
+
+  /* === 2. Percentage Dimensions (%) === */
+  width: 50%; /* 50% of the parent's width */
+  height: 50%; /* 50% of the parent's height */
+
+  /* === 3. Viewport Dimensions (vw, vh) === */
+  width: 50vw; /* 50% of the viewport's width */
+  height: 50vh; /* 50% of the viewport's height */
+
+  /* === 4. Relative to Element Font Size (em) === */
+  width: 10em; /* 10 times the current element's font size */
+  height: 20px; /* Fixed height of 20px */
+
+  /* === 5. Relative to Root Font Size (rem) === */
+  width: 10rem; /* 10 times the root font size (base: 10px) */
+  height: 20px; /* Fixed height of 20px */
+
+  background-color: gold; /* Sets the box's background color */
+}
+
+/* =========================================================== */
+/*                        Body Styling                        */
+/* Note: Define body dimensions and add a border for clarity. */
+/* =========================================================== */
+
+body {
+  height: 300px; /* Fixed height of 300px */
+  border: 1px solid grey; /* Grey border to visualize the body */
+}
