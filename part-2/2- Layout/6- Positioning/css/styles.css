@@ -1,0 +1,62 @@
+/* =========================================================== */
+/*               Default Positioning: Static                  */
+/* Note: Elements are static by default (not positioned).      */
+/* =========================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* Base font size for rem units */
+  height: 200vh;    /* Used to demonstrate scrolling */
+}
+
+.boxs {
+  border: 3px solid lightgrey;
+  position: relative; /* Parent element is "positioned" for .box-two */
+}
+
+.box {
+  width: 5rem; /* Common dimensions for all boxes */
+  height: 5rem;
+}
+
+/* =========================================================== */
+/*                   Relative Positioning                     */
+/* Note: Positioned relative to its own normal position.       */
+/*       Does not affect surrounding elements.                */
+/* =========================================================== */
+.box-one {
+  background-color: gold;
+  position: relative; /* Offsets from its original position */
+  left: 4rem;         /* Moves 4rem (40px) to the right */
+  top: 4rem;          /* Moves 4rem (40px) downward */
+  z-index: -1;        /* Moves element below others in stacking order */
+}
+
+/* =========================================================== */
+/*                   Absolute Positioning                     */
+/* Note: Positioned relative to the nearest positioned parent */
+/*       (one with position: relative, absolute, or fixed).    */
+/*       Removed from normal document flow.                   */
+/* =========================================================== */
+.box-two {
+  background-color: tomato;
+  position: absolute; /* Positioned relative to .boxs */
+  right: 0;           /* Aligns to the right edge of the parent */
+  bottom: 0;          /* Aligns to the bottom edge of the parent */
+}
+
+/* =========================================================== */
+/*                     Fixed Positioning                      */
+/* Note: Positioned relative to the viewport and remains      */
+/*       fixed when scrolling.                                */
+/* =========================================================== */
+.box-three {
+  background-color: dodgerblue;
+  position: fixed;    /* Positioned relative to the viewport */
+  top: 0;             /* Sticks to the top of the viewport */
+  left: 2rem;         /* 2rem (20px) from the left of the viewport */
+  right: 2rem;        /* 2rem (20px) from the right of the viewport */
+  width: auto;        /* Automatically adjusts based on left and right */
+}
