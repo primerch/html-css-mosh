@@ -1,0 +1,98 @@
+/* ================================================================== */
+/* ========================== Float Concept ========================= */
+/* ================================================================== */
+
+html {
+  font-size: 62.5%;
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  margin-right: 0.5rem;
+  float: left; /* Floats the element to the left */
+}
+
+.clear {
+  clear: both; /* Ensures elements are placed below floats */
+}
+
+/* ================================================================== */
+/* === Parent Collapsing Solve A: Using Empty Div + Clear Class ===== */
+/* ================================================================== */
+/* Note: Parent element collapses because floated children are ignored.
+   Adding an empty div with the "clear" class solves this issue. */
+
+html {
+  font-size: 62.5%;
+}
+
+.tweet {
+  border: 1px solid lightgrey;
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  margin-right: 0.5rem;
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+/* ================================================================== */
+/* === Parent Collapsing Solve B: Using Pseudo-Element ============== */
+/* ================================================================== */
+/* Note: Use a pseudo-element (::after) to automatically clear floats.
+   This avoids the need for an extra empty div. */
+
+html {
+  font-size: 62.5%;
+}
+
+.tweet {
+  border: 1px solid lightgrey;
+}
+
+/* Add clearfix class to apply automatic clearing */
+.clearfix::after {
+  content: "";
+  display: block; /* Ensures the pseudo-element behaves like a block */
+  clear: both; /* Clears floats inside the parent */
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  margin-right: 0.5rem;
+  float: left;
+}
+
+/* ================================================================== */
+/* === Parent Collapsing Solve C: Using Overflow ==================== */
+/* ================================================================== */
+/* Note: Setting overflow (to anything other than "visible") on the parent
+   creates a Block Formatting Context (BFC). A BFC forces the parent to
+   recognize and contain floated children, solving the collapsing issue. */
+
+html {
+  font-size: 62.5%;
+}
+
+.tweet {
+  border: 1px solid lightgrey;
+  overflow: hidden; /* Creates a BFC, making the parent include floated children */
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  margin-right: 0.5rem;
+  float: left;
+}
