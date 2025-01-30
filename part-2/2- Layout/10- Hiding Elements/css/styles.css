@@ -1,0 +1,22 @@
+p {
+  border: 1px solid lightgrey;
+}
+
+/* =========================================================== */
+/*                  Method 1: display: none                   */
+/* - Completely removes the element from the layout.          */
+/* - The space it occupies is also removed.                   */
+/* =========================================================== */
+
+.first {
+  display: none;
+}
+
+/* =========================================================== */
+/*                Method 2: visibility: hidden                */
+/* - The element remains in the layout.                       */
+/* - It is invisible but still occupies space.               */
+/* =========================================================== */
+.second {
+  visibility: hidden;
+}
