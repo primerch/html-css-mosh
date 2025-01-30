@@ -1,0 +1,102 @@
+/* =========================================================== */
+/*                     0. Root & Reset                         */
+/* Note: Basic resets and font sizing                          */
+/* =========================================================== */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================== */
+/*                     1. display: flex                        */
+/* Values: block (default), flex, inline-flex                  */
+/* Note: Activates flex layout; default <div> is block         */
+/* =========================================================== */
+.container {
+  display: flex;
+  border: 3px solid grey;
+  height: 90vh;
+}
+
+/* =========================================================== */
+/*                     2. flex-direction                       */
+/* Default: row | Values: row, row-reverse, column, column-reverse */
+/* =========================================================== */
+.container {
+  flex-direction: row;
+}
+
+/* =========================================================== */
+/*                     3. justify-content                      */
+/* Default: flex-start | Values: flex-start, flex-end, center, */
+/* space-between, space-around, space-evenly                   */
+/* =========================================================== */
+.container {
+  justify-content: center;
+}
+
+/* =========================================================== */
+/*                      4. align-items                         */
+/* Default: stretch | Values: stretch, flex-start, center,     */
+/* flex-end, baseline                                          */
+/* =========================================================== */
+.container {
+  align-items: center;
+}
+
+/* =========================================================== */
+/*                       5. flex-wrap                          */
+/* Default: nowrap | Values: nowrap, wrap, wrap-reverse        */
+/* =========================================================== */
+/* .container {
+    flex-wrap: wrap;
+} */
+
+/* =========================================================== */
+/*                     6. align-content                        */
+/* Default: stretch | Values: stretch, flex-start, center,     */
+/* flex-end, space-between, space-around                       */
+/* Note: Applies only if items wrap to multiple lines          */
+/* =========================================================== */
+.container {
+  align-content: center;
+}
+
+/* =========================================================== */
+/*                     7. flex-basis                           */
+/* Default: auto | "auto" uses content or set width/height     */
+/* =========================================================== */
+/*                     8. flex-grow                            */
+/* Default: 0 | Item won't grow unless flex-grow > 0           */
+/* =========================================================== */
+/*                     9. flex-shrink                          */
+/* Default: 1 | Item can shrink if there's not enough space    */
+/* =========================================================== */
+/*           10. flex (shorthand: grow, shrink, basis)         */
+/* =========================================================== */
+.box {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  margin: 2rem;
+  flex-basis: 15rem; /* (7) */
+  flex-grow: 1; /* (8) */
+  flex-shrink: 1; /* (9) */
+  /* flex: 1 1 15rem; Example for (10) */
+}
+
+/* =========================================================== */
+/*                      11. align-self                         */
+/* Default: auto | Values: auto, stretch, flex-start, center,  */
+/* flex-end, baseline | "auto" inherits parent's align-items   */
+/* =========================================================== */
+.box-one {
+  align-self: flex-start;
+  flex-grow: 2;
+  flex-shrink: 0;
+}
