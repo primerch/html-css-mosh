@@ -1,7 +1,8 @@
-/* =========================================================== */
-/*                   0. Root & Reset                           */
-/* Basic resets for consistent layout                         */
-/* =========================================================== */
+/* ==================================================================== */
+/*                               0. Root & Reset                        */
+/* Basic resets for consistent layout                                   */
+/* ==================================================================== */
+
 html {
   font-size: 62.5%; /* 1rem = 10px for easier calculations */
 }
@@ -12,131 +13,126 @@ html {
   box-sizing: border-box;
 }
 
-/* =========================================================== */
-/*                   1. display: flex                         */
-/* Enables Flexbox layout on the container                   */
-/* Default: block (for <div> elements)                       */
-/* Values: flex, inline-flex                                 */
-/* =========================================================== */
+/* ==================================================================== */
+/*                              1. display: flex                        */
+/* Enables Flexbox layout on the container                              */
+/* Default: block (for <div> elements)                                  */
+/* Values: flex, inline-flex                                            */
+/* -------------------------------------------------------------------- */
+/* justify  — positions items along the primary axis                    */
+/* align    — positions items along the cross axis                      */
+/* content  — distributes groups of items                               */
+/* items    — positions individual flex items                           */
+/* ==================================================================== */
+
 .container {
   display: flex;
   border: 3px solid grey;
   height: 90vh;
 }
 
-/* =========================================================== */
-/*                   2. flex-direction                        */
-/* Defines the main axis direction                           */
-/* Default: row                                              */
-/* Values: row, row-reverse, column, column-reverse         */
-/* =========================================================== */
+/* ==================================================================== */
+/*                             2. flex-direction                        */
+/* Defines the main axis direction                                      */
+/* Default: row                                                         */
+/* Values: row, row-reverse, column, column-reverse                     */
+/* ==================================================================== */
+
 .container {
   flex-direction: row;
 }
 
-/* =========================================================== */
-/*                   3. justify-content                       */
-/* Aligns items along the main axis                          */
-/* Default: flex-start                                       */
-/* Values: flex-start, flex-end, center,                     */
-/* space-between, space-around, space-evenly                 */
-/* =========================================================== */
+/* ==================================================================== */
+/*                           3. justify-content                         */
+/* Aligns items along the main axis                                     */
+/* Default: flex-start                                                  */
+/* Values: flex-start, flex-end, center, space-between, space-around, space-evenly */
+/* ==================================================================== */
+
 .container {
   justify-content: center;
 }
 
-/* =========================================================== */
-/*                   4. align-items                           */
-/* Aligns items along the cross axis                         */
-/* Default: stretch                                          */
-/* Values: stretch, flex-start, center,                      */
-/* flex-end, baseline                                        */
-/* =========================================================== */
+/* ==================================================================== */
+/*                             4. align-items                           */
+/* Aligns items along the cross axis                                    */
+/* Default: stretch                                                     */
+/* Values: stretch, flex-start, center, flex-end, baseline              */
+/* ==================================================================== */
+
 .container {
   align-items: center;
 }
 
-/* =========================================================== */
-/*                   5. flex-wrap                             */
-/* Controls whether items wrap to a new row if needed        */
-/* Default: nowrap                                           */
-/* Values: nowrap, wrap, wrap-reverse                        */
-/* =========================================================== */
+/* ==================================================================== */
+/*                             5. flex-wrap                             */
+/* Controls whether items wrap to a new row if needed                   */
+/* Default: nowrap                                                      */
+/* Values: nowrap, wrap, wrap-reverse                                   */
+/* ==================================================================== */
+
 /* .container {
     flex-wrap: wrap;
 } */
 
-/* =========================================================== */
-/*                   6. align-content                        */
-/* Controls spacing between wrapped rows (multi-line flex)   */
-/* Default: stretch                                          */
-/* Works only if flex-wrap: wrap is set                      */
-/* Values: stretch, flex-start, center, flex-end,            */
-/* space-between, space-around                               */
-/* =========================================================== */
+/* ==================================================================== */
+/*                            6. align-content                          */
+/* Controls spacing between wrapped rows (multi-line flex)              */
+/* Default: stretch                                                     */
+/* Works only if flex-wrap: wrap is set                                 */
+/* Values: stretch, flex-start, center, flex-end, space-between, space-around */
+/* ==================================================================== */
+
 .container {
   align-content: center;
 }
 
-/* =========================================================== */
-/*                   7. flex-basis                            */
-/* Sets the initial size of the flex item                    */
-/* Default: auto (uses width/height if set, otherwise content size) */
-/* Values: auto, <length> (px, rem, %, etc.)                 */
-/* =========================================================== */
+/* ==================================================================== */
+/*                            7. flex-basis                             */
+/* Sets the initial size of the flex item                               */
+/* Default: auto (uses width/height if set, otherwise content size)     */
+/* Values: auto, <length> (px, rem, %, etc.)                            */
+/* ==================================================================== */
 
-/* =========================================================== */
-/*                   8. flex-grow                             */
-/* Defines how much an item grows relative to others         */
-/* Default: 0 (item will not grow)                           */
-/* Values: 0 (no growth) to any positive number              */
-/* =========================================================== */
+/* ==================================================================== */
+/*                            8. flex-grow                              */
+/* Defines how much an item grows relative to others                    */
+/* Default: 0 (item will not grow)                                      */
+/* Values: 0 (no growth) to any positive number                         */
+/* ==================================================================== */
 
-/* =========================================================== */
-/*                   9. flex-shrink                           */
-/* Defines how much an item shrinks if space is tight        */
-/* Default: 1 (can shrink)                                   */
-/* Values: 0 (no shrinking) to any positive number           */
-/* =========================================================== */
+/* ==================================================================== */
+/*                            9. flex-shrink                            */
+/* Defines how much an item shrinks if space is tight                   */
+/* Default: 1 (can shrink)                                              */
+/* Values: 0 (no shrinking) to any positive number                      */
+/* ==================================================================== */
 
-/* =========================================================== */
-/*           10. flex (shorthand: grow, shrink, basis)        */
-/* Combines flex-grow, flex-shrink, and flex-basis           */
-/* Default: auto (Equivalent to flex: 1 1 auto)              */
-/* Syntax: flex: <grow> <shrink> <basis>;                     */
-/* =========================================================== */
+/* ==================================================================== */
+/*                    10. flex (shorthand: grow, shrink, basis)         */
+/* Combines flex-grow, flex-shrink, and flex-basis                      */
+/* Default: auto (Equivalent to flex: 1 1 auto)                         */
+/* Syntax: flex: <grow> <shrink> <basis>;                               */
+/*                                                                      */
+/* Here's a visual comparison to help understand how                    */
+/* flex: auto behaves differently from other flex values:               */
+/* -------------------------------------------------------------------- */
+/* | Flex Value    | flex-grow | flex-shrink | flex-basis | Behavior   | */
+/* |-------------- |-----------|-------------|------------|------------| */
+/* | flex: none    | 0         | 0           | auto       | Fixed size | */
+/* | flex: 1       | 1         | 1           | 0          | Grow/shrink| */
+/* | flex: initial | 0         | 1           | auto       | Shrinks    | */
+/* | flex: auto    | 1         | 1           | auto       | Grow/shrink| */
+/* -------------------------------------------------------------------- */
+/* ==================================================================== */
 
-/* 🔹 1 Value: flex-grow only (shrink = 1, basis = 0) */
-.box1 {
-  flex: 1; /* Equivalent to flex: 1 1 0; */
-}
+/* ==================================================================== */
+/*                            11. align-self                            */
+/* Overrides align-items for a specific item                            */
+/* Default: auto (inherits align-items from parent)                     */
+/* Values: auto, stretch, flex-start, center, flex-end, baseline        */
+/* ==================================================================== */
 
-/* 🔹 2 Values: flex-grow and flex-shrink (basis = 0) */
-.box2 {
-  flex: 1 0; /* Equivalent to flex: 1 0 0; */
-}
-
-/* 🔹 3 Values: flex-grow, flex-shrink, and flex-basis */
-.box3 {
-  flex: 1 1 15rem; /* Item starts at 15rem, can grow and shrink */
-}
-
-/* 🔹 Special Case: flex: auto (Equivalent to flex: 1 1 auto) */
-.box4 {
-  flex: auto; /* Uses content size but allows growth & shrink */
-}
-
-/* 🔹 Special Case: flex: none (Equivalent to flex: 0 0 auto) */
-.box5 {
-  flex: none; /* Fixed size, no growth or shrink */
-}
-
-/* =========================================================== */
-/*                   11. align-self                           */
-/* Overrides align-items for a specific item                 */
-/* Default: auto (inherits align-items from parent)          */
-/* Values: auto, stretch, flex-start, center, flex-end, baseline */
-/* =========================================================== */
 .box-one {
   align-self: flex-start;
   flex-grow: 2;
