@@ -1,0 +1,38 @@
+/* =========================================================== */
+/*                     2. nth-of-type(n) Selector           */
+/* =========================================================== */
+.box:nth-of-type(2) {
+  background-color: dodgerblue;
+}
+
+/* =========================================================== */
+/*                    3. Media Queries (Screen)              */
+/* =========================================================== */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .box {
+    background-color: white;
+  }
+}
+
+/* =========================================================== */
+/*                     4. Media Queries (Print)              */
+/* =========================================================== */
+@media print {
+  body {
+    font-size: 12pt;
+  }
+
+  .box {
+    padding: 0.5cm;
+  }
+}
