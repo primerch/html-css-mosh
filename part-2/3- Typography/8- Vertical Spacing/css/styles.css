@@ -1,0 +1,28 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ======================================================= */
+/*                1. Margin (Vertical Spacing)            */
+/* Note: Controls spacing around elements                 */
+/* ======================================================= */
+h1 {
+  margin: 3rem 0 1rem 0;
+}
+
+/* ======================================================= */
+/*            2. Line-Height (Vertical Spacing)           */
+/* Note: Relative to the element's font size              */
+/* - Should be 1.5 times the font-size                    */
+/* - No unit needed, as it acts as a multiplier           */
+/* ======================================================= */
+body {
+  font-size: 1rem;
+  line-height: 1.5; /* Multiplier, based on font-size */
+}
