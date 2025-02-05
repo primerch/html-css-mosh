@@ -1,15 +1,28 @@
+/* =========================================================== */
+/*                     System Font Stack                       */
+/* Note: Using native OS fonts improves performance            */
+/* =========================================================== */
+
 /*
-free font-services:
-- Google Web Fonts(fonts.google.com)
+System font stack
+1. benefits:
+- can boost performance
+- no flash of unstyled text(FOUT)
+- native look
+- overall: better experience
+2. drawbacks:
+- defaults fonts vary
 
-paid font-services:
-- Adobe Fonts(fonts.adobe.com)
-- fonts.com
-- fontdeck.com
 
-drawback: we cannot apply subsetting, we cannot reduce font size , we cannot exclude extra characters
+| OS              | Default Font     |
+|-----------------|------------------|
+| macOS (recent)  | San Francisco    |
+| macOS (order)   | Helvetica Neue   |
+| Windows         | Segoe UI         |
+| Android         | Roboto           |
 */
 
-p {
-  font-family: "Open Sans", sans-serif;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
