@@ -1,0 +1,49 @@
+/* =========================================================== */
+/*                1. Font Loading Optimization               */
+/* Note: Controls how text appears while the font loads.      */
+/* Font-Display Options:                                      */
+/* - auto: Browser decides strategy. Defaults to "swap" in Chrome. */
+/* - swap: Minimal block period, immediately swaps fonts.     */
+/* - block: Short block period, then infinite swap.           */
+/* - fallback: Short block period, limited swap.              */
+/* - optional: Very short block period, no swap (tries to cache). */
+/* =========================================================== */
+
+@font-face {
+  font-family: "open-sans";
+  src:
+    url("fonts/open-sans/opensans-regular-webfont.woff2") format("woff2"),
+    url("fonts/open-sans/opensans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback; /* Fallback strategy to minimize FOUT */
+}
+
+/* =========================================================== */
+/*         2. Extra Font Optimization(custom subsetting)       */
+/* Note: Further optimization by compressing fonts. Use tools */
+/* like fontsquirrel.com to optimize size and ensure all characters. */
+/* =========================================================== */
+
+@font-face {
+  font-family: "open-sans";
+  src:
+    url("fonts/open-sans/opensans-bold-webfont.woff2") format("woff2"),
+    url("fonts/open-sans/opensans-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* =========================================================== */
+/*            3. Handling FOUT (Flash of Unstyled Text)        */
+/* Note: Occurs when fallback fonts show up until the web font */
+/* is fully loaded. Test by disabling browser cache and reloading. */
+/* =========================================================== */
+
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif; /* Fallback font for headers */
+}
+
+p {
+  font-family: open-sans, Arial, Helvetica, sans-serif; /* Fallback fonts for paragraphs */
+}
