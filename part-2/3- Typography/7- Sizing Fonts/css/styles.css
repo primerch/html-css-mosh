@@ -1,0 +1,59 @@
+/* =========================================================== */
+/*              1. Base Font Size & Box Sizing                  */
+/* Note: 1rem = 10px if default is 16px (62.5% of 16px)         */
+/* =========================================================== */
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================== */
+/*         2. Body & Paragraph Responsive Font Sizes          */
+/* Font-Size:                                                 */
+/* - Avoid px for better scaling on high-DPI screens           */
+/* - Use %, vh, vw, em, or rem                                 */
+/* =========================================================== */
+
+body {
+  font-size: 2rem; /* ~20px initially */
+}
+
+p {
+  font-size: 1.5rem; /* ~15px initially */
+}
+
+/* When viewport >= 600px, font-size => 130% of 10px => 13px */
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 130%; /* 1rem => ~13px => 2rem => ~26px, 1.5rem => ~19.5px */
+  }
+}
+
+/* =========================================================== */
+/*        3. Headings: Font Family & Example Sizes             */
+/* Note: Using Georgia stack, sizes from a type scale          */
+/* https://typescale.com                                        */
+/* =========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+  font-size: 5.61rem; /* ~56px at base, ~73px at 130% */
+}
+
+h2 {
+  font-size: 4.209rem; /* ~42px at base, ~55px at 130% */
+}
