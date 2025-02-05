@@ -1,0 +1,48 @@
+/* =========================================================== */
+/*                   1. Register Web Fonts                    */
+/* Note:                                                      */
+/* - Even if a font is installed locally, browsers won’t use  */
+/*   it unless explicitly defined in CSS.                     */
+/* - Ensures consistency across all devices and OS.           */
+/* - Installed fonts are not accessible to website visitors.  */
+/* =========================================================== */
+
+@font-face {
+  font-family: "opensans";
+  src:
+    url("fonts/open-sans/opensans-regular-webfont.woff2") format("woff2"),
+    url("fonts/open-sans/opensans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "opensans"; /* Keep the same family name to apply weight variation */
+  src:
+    url("fonts/open-sans/opensans-bold-webfont.woff2") format("woff2"),
+    url("fonts/open-sans/opensans-bold-webfont.woff") format("woff");
+  font-weight: bold; /* Assigns bold weight to this font variant */
+  font-style: normal;
+}
+
+/* =========================================================== */
+/*                   2. Where to Find Fonts                   */
+/* Note: Free & paid font sources                             */
+/* - Free: fontsquirrel.com (Use Webfont Generator for WOFF)  */
+/* - Paid: fonts.com, myfonts.com                             */
+/* =========================================================== */
+
+/* =========================================================== */
+/*                      3. Font Formats                       */
+/* Note: Common font formats and their use cases              */
+/* - TTF (TrueType Font) - Standard system font format        */
+/* - OTF (OpenType Font) - Advanced version of TTF            */
+/* - EOT (Embedded OpenType) - Used in older IE browsers      */
+/* --- Web-Specific Formats ---                               */
+/* - WOFF (Web Open Font Format) - Compressed for web use     */
+/* - WOFF2 (More compressed, faster loading)                  */
+/* =========================================================== */
+
+p {
+  font-family: "opensans", sans-serif; /* Uses regular and bold automatically */
+}
