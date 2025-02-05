@@ -1,0 +1,56 @@
+/* =========================================================== */
+/*                        1. Font Family                       */
+/* Note:                                                      */
+/* a. Three main categories: serif, sans-serif, monospace     */
+/* b. Font stack: Fonts are checked in order:                 */
+/*    - If 'a' is available, use it; otherwise, try 'b', etc. */
+/* c. CSS inheritance: <p> and <a> inherit from <body>        */
+/* =========================================================== */
+
+body {
+  font-family: Arial, Helvetica, sans-serif; /* Sans-serif font stack */
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif; /* Serif font stack */
+}
+
+/* =========================================================== */
+/*                     2. Font Weight                         */
+/* Note:                                                      */
+/* - Ranges from 100 (thin) to 900 (extra-bold)               */
+/* - Common values: normal (400), bold (700)                  */
+/* - Can also use: bolder, lighter                            */
+/* =========================================================== */
+
+p {
+  font-weight: normal; /* Equivalent to 400 */
+
+  /* ======================================================= */
+  /*                      3. Font Style                     */
+  /* Note: Defines the appearance of the text               */
+  /* - Options: normal, italic, oblique                     */
+  /* ======================================================= */
+
+  font-style: italic;
+
+  /* ======================================================= */
+  /*                      4. Font Size                      */
+  /* Note: Defines text size using absolute or relative units */
+  /* - Recommended: rem, em (scalable, responsive)          */
+  /* - Alternative: px, %                                    */
+  /* ======================================================= */
+
+  font-size: 1rem;
+
+  /* ======================================================= */
+  /*                        5. Color                        */
+  /* Note: Defines text color using various formats         */
+  /* - HEX: #RRGGBB or #RGB                                 */
+  /* - RGB: rgb(r, g, b)                                    */
+  /* - HSL: hsl(hue, saturation, lightness)                 */
+  /* - Named colors: e.g., red, blue, gray                  */
+  /* ======================================================= */
+
+  color: #444;
+}
