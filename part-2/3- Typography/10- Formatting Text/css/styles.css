@@ -1,0 +1,76 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p {
+  /* ======================================================= */
+  /*                   1. Text Alignment                    */
+  /* Note: Aligns text horizontally                         */
+  /* Default: left (for LTR languages)                      */
+  /* Common: left, center, right, justify                   */
+  /* ======================================================= */
+  text-align: left;
+}
+
+p + p {
+  /* ======================================================= */
+  /*                   2. Text Indentation                  */
+  /* Note: Indents the first line of a paragraph            */
+  /* Default: 0                                             */
+  /* Common: 1rem, 2rem, 20px                               */
+  /* ======================================================= */
+  text-indent: 1rem;
+
+  /* ======================================================= */
+  /*                   3. Text Decoration                   */
+  /* Note: Adds visual effects like underline or strikethrough */
+  /* Default: none                                          */
+  /* Common: none, underline, overline, line-through        */
+  /* ======================================================= */
+  text-decoration: underline;
+
+  /* ======================================================= */
+  /*                   4. Text Transformation               */
+  /* Note: Controls letter case                             */
+  /* Default: none                                          */
+  /* Common: uppercase, lowercase, capitalize               */
+  /* ======================================================= */
+  text-transform: uppercase;
+
+  /* ======================================================= */
+  /*                   5. Text Truncation                   */
+  /* Note: Prevents text overflow                           */
+  /* Default: normal (wraps naturally)                      */
+  /* Common: nowrap, ellipsis                               */
+  /* ======================================================= */
+  /* Example: Single-line truncation */
+  /* border: 3px solid gold; */
+  /* width: 50ch; */
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+
+  /* ======================================================= */
+  /*                   6. Multi-Column Layout               */
+  /* Note: Splits text into multiple columns                */
+  /* Default: 1 column                                      */
+  /* Common: 2, 3, 4 columns                                */
+  /* ======================================================= */
+  column-count: 3;
+  column-gap: 2rem;
+  column-rule: 3px dotted #999;
+
+  /* ======================================================= */
+  /*                   7. Text Direction                    */
+  /* Note: Defines text flow direction                      */
+  /* Default: ltr                                           */
+  /* Common: ltr (Left-to-Right), rtl (Right-to-Left)       */
+  /* ======================================================= */
+  direction: ltr;
+}
