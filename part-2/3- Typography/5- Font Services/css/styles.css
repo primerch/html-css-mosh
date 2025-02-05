@@ -1,13 +1,17 @@
-/*
-free font-services:
-- Google Web Fonts(fonts.google.com)
+/* =========================================================== */
+/*                       1. Typography / Fonts                 */
+/* Note: Integrate free or paid font services as needed        */
+/* =========================================================== */
 
-paid font-services:
-- Adobe Fonts(fonts.adobe.com)
-- fonts.com
-- fontdeck.com
+/* Free Font Services:
+   - Google Fonts (fonts.google.com)
 
-drawback: we cannot apply subsetting, we cannot reduce font size , we cannot exclude extra characters
+   Paid Font Services:
+   - Adobe Fonts (fonts.adobe.com)
+   - Fonts.com
+   - Fontdeck.com
+
+   Drawback: Limited subsetting or custom exclusions
 */
 
 p {
