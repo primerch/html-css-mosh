@@ -1,0 +1,41 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ======================================================= */
+/*                  1. Base Font Settings                 */
+/* ======================================================= */
+body {
+  font-size: 5.5rem;
+}
+
+/* ======================================================= */
+/*           2. Horizontal Spacing: Letter Spacing        */
+/* Note: Adjusts space between individual letters         */
+/* ======================================================= */
+body {
+  letter-spacing: 0.05rem;
+}
+
+/* ======================================================= */
+/*            3. Horizontal Spacing: Word Spacing         */
+/* Note: Adjusts space between words                      */
+/* ======================================================= */
+body {
+  word-spacing: 2px;
+}
+
+/* ======================================================= */
+/*            4. Horizontal Spacing: Width                */
+/* Note: Ideal line length is 50-70 characters            */
+/* - 1ch is the width of the character "0" in the font    */
+/* ======================================================= */
+p {
+  width: 50ch;
+}
