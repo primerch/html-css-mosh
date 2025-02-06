@@ -1,0 +1,29 @@
+/* =========================================================== */
+/*                 Raster Image vs Vector Image               */
+/* Note: Raster images use pixels, vector images use paths    */
+/* =========================================================== */
+
+/* ----- Raster Image ----- */
+/* - Comes from cameras/scanners                              */
+/* - Formats: JPG, PNG, GIF, etc.                            */
+/* - More pixels = larger file size                          */
+/* - Looks blurry if scaled up                               */
+
+/* ----- Vector Image ----- */
+/* - Created in software (Illustrator)                      */
+/* - Format: SVG                                            */
+/* - Scalable vector graphics                               */
+/* - Looks sharp at any size                                */
+
+/* =========================================================== */
+/*                 Image Format Comparison Chart              */
+/* =========================================================== */
+
+/*
+| Format | Colors | Transparency | Animation |
+|--------|--------|--------------|-----------|
+| JPEG   | 16M    | No           | No        |
+| GIF    | 256    | Yes          | Yes       |
+| PNG    | 16M    | Yes          | Yes       |
+| WebP   | 16M    | Yes          | Yes       |
+*/
