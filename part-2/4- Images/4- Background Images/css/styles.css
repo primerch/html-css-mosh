@@ -1,0 +1,64 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================== */
+/*              0. Content Image vs Background Image           */
+/* =========================================================== */
+/*
+| Feature               | <img> (Content Image)                  | background-image (CSS)             |
+|-----------------------|---------------------------------------|-----------------------------------|
+| Exists in HTML?      | ✅ Yes (part of the DOM)              | ❌ No (only in CSS)               |
+| Affects Layout?      | ✅ Yes (takes up space)               | ❌ No (does not affect layout)    |
+| Layering            | 📌 In document flow (stacks naturally) | 🎨 Behind other elements          |
+| SEO & Accessibility | ✅ Recognized by screen readers via alt | ❌ Not read by screen readers     |
+| Use Case            | 📷 Essential content images (icons, photos, products) | 🖼️ Decorative backgrounds (textures, patterns) |
+*/
+
+/* =========================================================== */
+/*                        1. Body Styles                        */
+/* =========================================================== */
+body {
+  height: 300vh; /* Default: auto; Most Used: 100vh, 100% */
+
+  /* =========================================================== */
+  /*                  Background Image                           */
+  /*  Sets an image as the background of the element             */
+  /*  Default: none; Most Used: url('image.jpg')                 */
+  /* =========================================================== */
+  background-image: url("../images/bg-sanfrancisco.jpg");
+
+  /* =========================================================== */
+  /*                  Background Repeat                          */
+  /*  Defines if/how the background image is repeated            */
+  /*  Default: repeat; Most Used: no-repeat, repeat-x, repeat-y  */
+  /* =========================================================== */
+  background-repeat: no-repeat;
+
+  /* =========================================================== */
+  /*                  Background Position                        */
+  /*  Adjusts the horizontal and vertical position of the image  */
+  /*  Default: 0% 0% (top-left); Most Used: center, top, bottom  */
+  /* =========================================================== */
+  background-position: top;
+
+  /* =========================================================== */
+  /*                  Background Size                            */
+  /*  Determines how the background image is scaled              */
+  /*  Default: auto; Most Used: cover, contain, 100% 100%        */
+  /* =========================================================== */
+  background-size: contain;
+
+  /* =========================================================== */
+  /*                  Background Attachment                      */
+  /*  Controls whether the background scrolls with content       */
+  /*  Default: scroll; Most Used: fixed, local                   */
+  /* =========================================================== */
+  background-attachment: fixed;
+}
