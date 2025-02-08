@@ -1,0 +1,61 @@
+/* =========================================================== */
+/*                2. Reduce HTTP Requests with Sprites         */
+/* =========================================================== */
+/*                                                             */
+/*  Note: Combine multiple images into a single image to        */
+/*        reduce HTTP requests and improve performance.         */
+/*                                                             */
+/* =========================================================== */
+/*                                                             */
+/* Why use CSS Sprites?                                         */
+/* 1. Reduces HTTP requests by combining multiple images into   */
+/*    a single image. This improves page load time and reduces  */
+/*    server overhead.                                          */
+/* 2. Instead of sending multiple requests for separate images, */
+/*    a single request is made for the sprite image.            */
+/*                                                             */
+/* Why not overuse CSS Sprites?                                 */
+/* 1. Large File Size: Combining too many images can make the   */
+/*    sprite file too large and impact performance.             */
+/* 2. Lack of Flexibility: Replacing one image requires         */
+/*    regenerating the entire sprite image.                     */
+/* 3. Best for small images: Use this technique for small       */
+/*    images like logos, icons, or simple graphics.             */
+/*                                                             */
+/* =========================================================== */
+
+/* =========================================================== */
+.bg-dishes {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background: url("../images/css-sprite-combined.png") -10px -10px;
+}
+
+.bg-landing {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background: url("../images/css-sprite-combined.png") -130px -10px;
+}
+
+.bg-rocketship {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background: url("../images/css-sprite-combined.png") -250px -10px;
+}
+
+.bg-saturn {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background: url("../images/css-sprite-combined.png") -370px -10px;
+}
+
+.bg-ufo {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background: url("../images/css-sprite-combined.png") -490px -10px;
+}
