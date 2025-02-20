@@ -1,0 +1,25 @@
+.meal {
+  height: 400px;
+}
+
+/* ================================================ */
+/*               Understanding DPR                  */
+/* ================================================ */
+/*
+1. Physical Resolution:
+   - Example: iPhone 4 has a screen resolution of 960 × 640 pixels.
+
+2. Logical Resolution (CSS Pixels):
+   - The same iPhone 4 is 480 × 320 in CSS pixels.
+
+3. Device Pixel Ratio (DPR):
+   - Formula: DPR = Physical Pixels / Logical Pixels
+   - Example: 960 / 480 = 2 (DPR of 2)
+
+4. Responsive Images with `srcset`:
+   - If screen width = 400px:
+     - @3x → 1200px (better for high-DPR screens)
+     - @2x → 800px
+     - @1x → 400px
+   - The browser automatically picks the best image.
+*/
