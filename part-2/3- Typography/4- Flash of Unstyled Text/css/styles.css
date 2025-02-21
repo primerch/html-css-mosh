@@ -2,38 +2,37 @@
 font-display Example Scenarios (Slow Network)
 
 1. font-display: swap
-
 Day 1: User visits your site.
 Block period: 0 seconds → fallback font appears immediately.
 Day 2: Font finally loads (slow connection).
 Browser swaps to the custom font instantly.
 Result: Text suddenly changes on Day 2 (FOUT).
-2. font-display: block
 
+2. font-display: block
 Day 1: User visits your site.
 Block period: 3 seconds → text is invisible (FOIT).
 After 3 seconds → fallback font appears.
 Day 5: Font loads (extremely slow).
 Browser swaps to the custom font.
 Result: Text flashes on Day 5 (very late FOUT).
-3. font-display: fallback
 
+3. font-display: fallback
 Day 1: User visits your site.
 Block period: 100ms → text is briefly invisible.
 After 100ms → fallback font appears.
 Font takes 4 seconds to load (exceeds 3s swap period).
 Browser ignores the font forever.
 Result: Fallback font stays permanently.
-4. font-display: optional
 
+4. font-display: optional
 Day 1: User visits your site.
 Block period: 100ms → text is briefly invisible.
 Font fails to load within 100ms → fallback appears permanently.
 Day 2: Font finally loads.
 Browser does NOT swap (font abandoned).
 Result: Fallback font stays forever.
-5. font-display: auto
 
+5. font-display: auto
 Depends on the browser:
 Chrome: Behaves like swap.
 Day 1: Fallback appears immediately.
