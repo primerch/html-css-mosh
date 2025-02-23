@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Document</title>
+    <link href="./css/normalize.css" rel="stylesheet" />
+    <link href="./css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--
+Explanation of srcset and sizes attributes:
+
+srcset Attribute:
+-----------------
+- Provides a list of image files along with their intrinsic widths.
+- Format: "URL widthDescriptor", where the widthDescriptor (e.g., "400w") indicates the
+intrinsic width of that image in pixels.
+- In this example:
+  images/meal@1x.jpg  400w  -> The image is 400 pixels wide.
+  images/meal@2x.jpg  800w  -> The image is 800 pixels wide.
+  images/meal@3x.jpg 1200w  -> The image is 1200 pixels wide.
+- How Selection Works:
+  • The browser calculates the display width of the image using the sizes attribute.
+  • For example, if the computed display width is 400 pixels, the browser looks for an image
+    in srcset that is around 400 pixels wide. On a standard device (1x pixel density), it would
+    choose the 400w image.
+  • If the device has a higher pixel density (like a Retina display), even if the display width
+    is 400 pixels, the browser might select a higher resolution image (e.g., 800w) to ensure the image
+    appears sharp.
+
+sizes Attribute:
+----------------
+- Describes the expected display width of the image in the layout for different viewport sizes.
+- It helps the browser calculate the actual width in CSS pixels that the image will occupy.
+- Units used:
+  * "vw" (viewport width): 1vw equals 1% of the viewport's width.
+    - 100vw: 100% of the viewport width.
+    - 50vw: 50% of the viewport width.
+    - 33vw: Approximately 33% of the viewport width.
+- In this example, the sizes attribute is defined as:
+  (max-width:600px) 100vw,
+  (max-width:700px) 50vw,
+  33vw
+  This means:
+    • For viewport widths of 600px or less, the image will display at 100% of the viewport width.
+    • For viewport widths between 601px and 700px, the image will display at 50% of the viewport width.
+    • For viewport widths greater than 700px, the image will display at 33% of the viewport width.
+
+How It All Works Together:
+----------------------------
+- The browser first uses the sizes attribute to determine how many CSS pixels wide the image will
+be displayed. For instance, on a device with a 600px wide viewport, if the condition (max-width:600px)
+applies, the image will be rendered at 600px wide (100vw).
+- Next, the browser examines the srcset list to select an image whose intrinsic width best matches the
+calculated display width, taking into account the device's pixel density.
+  • For a calculated display width of 400px on a standard screen, the 400w image is the best match.
+  • On a high-resolution display, even with a 400px display width, a higher resolution image like the 800w
+    version may be chosen to ensure visual clarity.
+-->
+    <img
+      alt=""
+      class="meal"
+      sizes="
+        (max-width:600px) 100vw,
+        (max-width:700px) 50vw,
+        33vw
+      "
+      src="images/meal-full.jpg"
+      srcset="
+        images/meal@1x.jpg  400w,
+        images/meal@2x.jpg  800w,
+        images/meal@3x.jpg 1200w
+      "
+    />
+  </body>
+</html>
