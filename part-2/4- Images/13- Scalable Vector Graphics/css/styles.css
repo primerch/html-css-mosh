@@ -1,0 +1,20 @@
+/* =========================================================== */
+/*                Benefits of Using SVG Graphics              */
+/* =========================================================== */
+/* 1. Scalability: SVGs scale up or down without losing quality. */
+/* 2. Lightweight: They typically have smaller file sizes,       */
+/*    resulting in faster load times and reduced bandwidth use.   */
+/* 3. Resolution Independence: SVGs render sharply on all devices, */
+/*    including high-DPI displays.                                */
+/* 4. CSS Styling & Animation: Easily styled and animated with CSS.*/
+/* 5. Accessibility: Enhances SEO and works well with responsive   */
+/*    design principles.                                          */
+/* =========================================================== */
+
+body {
+  background: url("../images/constellation.svg");
+}
+
+.ufo {
+  width: 100px;
+}
