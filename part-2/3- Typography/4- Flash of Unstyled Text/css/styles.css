@@ -1,101 +1,95 @@
 /*
-font-display Example Scenarios (Slow Network)
+1. `font-display: auto
 
-1. font-display: swap
-Day 1: User visits your site.
-Block period: 0 seconds → fallback font appears immediately.
-Day 2: Font finally loads (slow connection).
-Browser swaps to the custom font instantly.
-Result: Text suddenly changes on Day 2 (FOUT).
+Behavior: Browser default (usually similar to block).
+Phases:
+· Block Period: ~3s (text invisible).
+· Swap Period: Infinite.
+· Failure Period: Never.
 
-2. font-display: block
-Day 1: User visits your site.
-Block period: 3 seconds → text is invisible (FOIT).
-After 3 seconds → fallback font appears.
-Day 5: Font loads (extremely slow).
-Browser swaps to the custom font.
-Result: Text flashes on Day 5 (very late FOUT).
+Scenario:
+· 0–3s: Text invisible (FOIT).
+· After 3s: Falls back to system font.
+· After 3 days: Swaps to custom font permanently.
 
-3. font-display: fallback
-Day 1: User visits your site.
-Block period: 100ms → text is briefly invisible.
-After 100ms → fallback font appears.
-Font takes 4 seconds to load (exceeds 3s swap period).
-Browser ignores the font forever.
-Result: Fallback font stays permanently.
+Use Case: Prioritizes font consistency but risks invisible text on slow networks.
+2. `font-display: block
 
-4. font-display: optional
-Day 1: User visits your site.
-Block period: 100ms → text is briefly invisible.
-Font fails to load within 100ms → fallback appears permanently.
-Day 2: Font finally loads.
-Browser does NOT swap (font abandoned).
-Result: Fallback font stays forever.
+Behavior: 3s block + infinite swap.
+Phases:
+· Block Period: ~3s (text invisible).
+· Swap Period: Infinite.
+· Failure Period: Never.
 
-5. font-display: auto
-Depends on the browser:
-Chrome: Behaves like swap.
-Day 1: Fallback appears immediately.
-Day 2: Font loads → swaps.
-Firefox: Behaves like block.
-Day 1: Text hidden for 3s → fallback appears.
-Day 5: Font loads → swaps.
-Result: Inconsistent across browsers.
+Scenario:
+· 0–3s: Text invisible.
+· After 3s: Uses fallback font.
+· After 3 days: Swaps to custom font.
 
-font-display: auto
-行为定义：由浏览器决定策略（不同浏览器可能不同）。例如，Chrome默认行为类似swap，其他浏览器可能类似block。
-阻塞期：浏览器自行定义（通常0-3秒）。
-交换期：浏览器自行定义（可能无限或有限）。
-适用场景：无特殊需求时使用。
+Use Case: Critical branding (font must load eventually).
+3. `font-display: swap
 
-font-display: block
-阻塞期：约3秒（期间文本不可见）。
-交换期：无限（加载完成后立即替换）。
-永久回退条件：仅当字体完全无法加载时。
-适用场景：品牌标题、LOGO等关键设计。
+Behavior: 100ms block + infinite swap.
+Phases:
+· Block Period: ~100ms (text invisible).
+· Swap Period: Infinite.
+· Failure Period: Never.
 
-font-display: swap
-阻塞期：接近0秒（立即显示备用字体）。
-交换期：无限（加载完成后替换）。
-永久回退条件：字体完全无法加载时。
-副作用：可能导致FOUT（文本闪现）。
-适用场景：正文内容优先可读性。
+Scenario:
+· 0–100ms: Text invisible.
+· After 100ms: Uses fallback font.
+· After 3 days: Swaps to custom font.
 
-font-display: fallback
-阻塞期：约100毫秒（期间文本不可见）。
-交换期：约3秒（超时后永久使用备用字体）。
-永久回退条件：加载超时超过3秒。
-适用场景：平衡用户体验与设计需求。
+Use Case: Balances quick content visibility with eventual font consistency (e.g., body text).
+4. `font-display: fallback
 
-font-display: optional
-阻塞期：约100毫秒（期间文本不可见）。
-交换期：无（超时后永久放弃加载）。
-永久回退条件：加载超时超过100毫秒。
-适用场景：弱网环境或装饰性字体。
+Behavior: 100ms block + 3s swap.
+Phases:
+· Block Period: ~100ms (text invisible).
+· Swap Period: ~3s.
+· Failure Period: After 3s.
 
+Scenario:
+· 0–100ms: Text invisible.
+· 100ms–3s: Uses fallback font but keeps trying to load.
+· After 3s: Permanently locks to fallback font.
+· After 3 days: No swap (too late).
 
-总结对比表：
-选项      阻塞期           交换期         永久回退条件          典型用例
+Use Case: Optimizes performance; sacrifices font consistency on slow networks.
+5. `font-display: optional
 
-auto      浏览器决定       浏览器决定       浏览器策略决定        无特殊需求
-block     约3秒           无限            字体完全无法加载      品牌标题、LOGO
-swap      接近0秒          无限            字体完全无法加载     正文内容
-fallback  约100毫秒        约3秒           加载超时（>3秒）     平衡体验与设计
-optional  约100毫秒        无             加载超时（>100毫秒）  弱网环境、装饰性字体
+Behavior: 100ms block + no swap.
+Phases:
+· Block Period: ~100ms (text invisible).
+· Swap Period: 0s.
+· Failure Period: Immediate after block.
 
-关键补充说明：
+Scenario:
+· 0–100ms: Text invisible.
+· After 100ms: Permanently uses fallback font.
+· After 3 days: No swap (ignores loaded font).
 
-阻塞期与用户体验：
-较长阻塞期（如block）可能导致FOIT（不可见文本闪现）。
-较短阻塞期（如swap）可能导致布局偏移（CLS）。
+Use Case: Non-essential fonts or unstable connections (e.g., mobile users).
+SUMMARY
 
-回退字体选择：
-需定义与自定义字体风格接近的备用字体（如Arial作为无衬线回退）。
-确保回退字体覆盖必要字符，避免显示占位符。
+Block Period:
+· block/auto: ~3s.
+· swap/fallback/optional: ~100ms.
 
-性能优化建议：
-使用preload预加载字体。
-优先使用woff2格式压缩字体文件。
+Swap Period:
+· block/auto/swap: Infinite.
+· fallback: ~3s.
+· optional: 0s.
+
+After 3 Days:
+· Swaps to font: auto, block, swap.
+· No swap: fallback, optional.
+KEY TAKEAWAYS
+
+· Use block/swap if font consistency is critical (e.g., logos).
+· Use fallback/optional to prioritize fast content visibility.
+· swap is safest for most use cases (avoids long FOIT).
+· optional is ideal for mobile users or unreliable networks.
 */
 
 @font-face {
