@@ -24,7 +24,7 @@ p::first-line {
 /*         4. p::before: Insert content before <p>             */
 /* =========================================================== */
 p::before {
-  content: '...';
+  content: "...";
   display: block;
 }
 
@@ -32,6 +32,6 @@ p::before {
 /*         5. p::after: Insert content after <p>               */
 /* =========================================================== */
 p::after {
-  content: '...';
+  content: "...";
   display: block;
 }

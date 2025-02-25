@@ -9,7 +9,7 @@
 
 html {
   font-size: 62.5%; /* Base font size for rem units */
-  height: 200vh;    /* Used to demonstrate scrolling */
+  height: 200vh; /* Used to demonstrate scrolling */
 }
 
 .boxs {
@@ -31,9 +31,9 @@ html {
 .box-one {
   background-color: gold;
   position: relative; /* Moves based on its normal position */
-  left: 4rem;         /* 4rem (40px) to the right */
-  top: 4rem;          /* 4rem (40px) downward */
-  z-index: -1;        /* Stacks behind elements with higher z-index */
+  left: 4rem; /* 4rem (40px) to the right */
+  top: 4rem; /* 4rem (40px) downward */
+  z-index: -1; /* Stacks behind elements with higher z-index */
 }
 
 /* =========================================================== */
@@ -44,8 +44,8 @@ html {
 .box-two {
   background-color: tomato;
   position: absolute; /* Positioned relative to .boxs (the nearest positioned ancestor) */
-  right: 0;           /* Aligns to the right edge of the parent */
-  bottom: 0;          /* Aligns to the bottom edge of the parent */
+  right: 0; /* Aligns to the right edge of the parent */
+  bottom: 0; /* Aligns to the bottom edge of the parent */
 }
 
 /* =========================================================== */
@@ -56,9 +56,9 @@ html {
 /* =========================================================== */
 .box-three {
   background-color: dodgerblue;
-  position: fixed;    /* Sticks to the viewport */
-  top: 0;             /* 0px from the top of the viewport */
-  left: 2rem;         /* 2rem (20px) from the left */
-  right: 2rem;        /* 2rem (20px) from the right */
-  width: auto;        /* Stretches to fill space between left and right */
+  position: fixed; /* Sticks to the viewport */
+  top: 0; /* 0px from the top of the viewport */
+  left: 2rem; /* 2rem (20px) from the left */
+  right: 2rem; /* 2rem (20px) from the right */
+  width: auto; /* Stretches to fill space between left and right */
 }

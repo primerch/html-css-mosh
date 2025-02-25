@@ -11,7 +11,7 @@
 /*    absolutely necessary as it breaks the natural cascade.   */
 /* =========================================================== */
 h1 {
-    color: dodgerblue !important;
+  color: dodgerblue !important;
 }
 
 /* =========================================================== */
@@ -20,7 +20,7 @@ h1 {
 /*    Use for reusable styling across multiple elements.       */
 /* =========================================================== */
 .highlight {
-    color: deeppink;
+  color: deeppink;
 }
 
 /* =========================================================== */
@@ -29,7 +29,7 @@ h1 {
 /*    IDs should always be unique within the document.         */
 /* =========================================================== */
 #products {
-    color: green;
+  color: green;
 }
 
 /* =========================================================== */
@@ -39,7 +39,7 @@ h1 {
 /*    Use when the ID needs to be scoped to a specific element type. */
 /* =========================================================== */
 h1#products {
-    color: coral;
+  color: coral;
 }
 
 /* =========================================================== */
@@ -50,5 +50,5 @@ h1#products {
 /*    the same ID appears in different contexts.               */
 /* =========================================================== */
 .featured #products {
-    color: purple;
+  color: purple;
 }
