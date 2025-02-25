@@ -1,0 +1,47 @@
+/* =========================================================== */
+/*                          Body Styling                      */
+/* Note: Center the .box and ensure full viewport height.     */
+/* =========================================================== */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set height to 100% of viewport for vertical centering */
+  border: 3px solid lightblue;
+}
+
+/* =========================================================== */
+/*                         Box Styling                       */
+/* Note: Style for the box element.                          */
+/* =========================================================== */
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+}
+
+/* =========================================================== */
+/*                      Box Hover Transformations            */
+/* Note: Various CSS transformations can be applied on hover. */
+/* =========================================================== */
+.box:hover {
+  /* 1. Rotation: rotate by 15 degrees */
+  /* transform: rotate(15deg); */
+
+  /* 2. Scaling: enlarge by 1.5 times */
+  /* transform: scale(1.5); */
+
+  /* 3. Skew: distort element by 15 degrees */
+  /* transform: skew(15deg); */
+
+  /* 4. Translate: move element by 10px right and down */
+  /* transform: translate(10px, 10px); */
+
+  /* Alternative: Use relative positioning for the same effect */
+  /* Note: Transform uses hardware acceleration for better performance */
+  /* transform: translate(10px, 10px); */
+
+  /* 5. Combine transformations: rotate and translate */
+  /* Order of transformations matters! */
+  transform: rotate(45deg) translateX(50px);
+}
