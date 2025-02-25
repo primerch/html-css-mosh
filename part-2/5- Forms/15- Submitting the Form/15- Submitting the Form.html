@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- =========================================================== -->
+    <!--                         1. Form Methods                     -->
+    <!--
+Note: Method defines how form data is sent:
+- GET: Appends form data to the URL. It's visible in the URL bar. Often used for search forms or when bookmarking.
+- POST: Sends form data in the body of the request, not visible in the URL bar. Typically used for submitting sensitive data.
+-->
+    <!-- =========================================================== -->
+
+    <!-- Using 'GET' method here to send data as URL parameters -->
+    <form action="https://formspree.io/f/mnnjkldn" method="GET">
+      <!-- =========================================================== -->
+      <!--                         2. Input Fields                     -->
+      <!--
+    Note: Each input field should have a 'name' attribute so that its value can be sent in the request.
+  -->
+      <!-- =========================================================== -->
+
+      <input name="name" placeholder="Name" type="text" />
+      <input name="email" placeholder="Email" type="email" />
+
+      <!-- =========================================================== -->
+      <!--                     3. Submit Buttons                       -->
+      <!-- A. Submit Button with <button> -->
+      <!--
+    Note: Using <button> allows you to add additional features like icons inside the button.
+    - "type='submit'" triggers form submission.
+  -->
+      <!-- B. Submit Button with <input> -->
+      <!--
+    Note: Using <input> as a submit button does not support adding icons, but still submits the form.
+    - The 'value' attribute specifies the text on the button.
+  -->
+      <!-- =========================================================== -->
+
+      <button type="submit">Submit</button>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
