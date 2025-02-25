@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <!-- =========================================================== -->
+      <!--                        1. Datalist: Suggestion List      -->
+      <!-- Note: Unlike the dropdown list, the user can freely type anything they want but also get hints from suggestions -->
+      <!-- Note: Use 'data-value' to hide unique identifiers (values) from the user and show only the human-readable label -->
+      <!-- Note: The 'autocomplete' attribute can be used to turn off or on browser suggestions for input -->
+      <!-- =========================================================== -->
+      <input autocomplete="off" list="countries" type="text" />
+
+      <!-- =========================================================== -->
+      <!--                      2. Datalist for Country Options        -->
+      <!-- Note: 'datalist' provides the suggestion options to the input field -->
+      <!-- =========================================================== -->
+      <datalist id="countries">
+        <option data-value="1">Australia</option>
+        <option data-value="2">Canada</option>
+        <option data-value="3">India</option>
+        <option data-value="4">United States</option>
+      </datalist>
+    </form>
+  </body>
+</html>
