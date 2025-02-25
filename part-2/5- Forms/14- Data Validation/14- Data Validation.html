@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <!-- =========================================================== -->
+      <!--                   1. Input: Text (with validation)         -->
+      <!-- Note: 'required' ensures the field cannot be empty.        -->
+      <!-- Note: 'minlength="3"' sets the minimum number of characters. -->
+      <!-- Note: 'maxlength="10"' sets the maximum number of characters. -->
+      <!-- =========================================================== -->
+      <input maxlength="10" minlength="3" required type="text" />
+
+      <!-- =========================================================== -->
+      <!--                       2. Input: Email                      -->
+      <!-- Note: This input expects an email format (e.g., user@domain.com). -->
+      <!-- =========================================================== -->
+      <input type="email" />
+
+      <!-- =========================================================== -->
+      <!--                      3. Input: Date                        -->
+      <!-- Note: This input allows the user to select a date.         -->
+      <!-- =========================================================== -->
+      <input type="date" />
+
+      <!-- =========================================================== -->
+      <!--                    4. Input: Number (with range)            -->
+      <!-- Note: 'min="1"' ensures the value cannot be less than 1.   -->
+      <!-- Note: 'max="3"' ensures the value cannot exceed 3.         -->
+      <!-- =========================================================== -->
+      <input type="number" min="1" max="3" />
+
+      <!-- =========================================================== -->
+      <!--                          5. Submit Button                   -->
+      <!-- =========================================================== -->
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
