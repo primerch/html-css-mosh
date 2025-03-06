@@ -1,9 +1,79 @@
+/* =========================================================== */
+/*                    1. Root Font Size                        */
+/* Note: Sets base font-size for easier rem unit calculations  */
+/* =========================================================== */
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
+/* =========================================================== */
+/*                      2. Body Styling                        */
+/* Note: Applies general text styling                          */
+/* =========================================================== */
+body {
+    font-size: 1.5rem;
+}
+
+/* =========================================================== */
+/*                     3. Box-Sizing Reset                     */
+/* Note: Ensures padding & border included within dimensions   */
+/* =========================================================== */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
+/* =========================================================== */
+/*                        4. Box Styling                       */
+/* Note: Basic size & color setup for boxes                    */
+/* =========================================================== */
+.box {
+    background-color: gold;
+    width: 15rem;
+    height: 15rem;
+}
+
+/* =========================================================== */
+/*                   5. Container Perspective                  */
+/* Note: Sets depth effect on parent to unify 3D perspective   */
+/* Why on Parent?                                              */
+/* - Applying 'perspective' directly on '.box' distorts layout */
+/*   because each box would have its own viewpoint, causing    */
+/*   inconsistent and unnatural 3D effects.                    */
+/* - Setting 'perspective' on '.container' creates a single,   */
+/*   unified viewpoint for all child elements, resulting in    */
+/*   consistent, realistic 3D transformations.                 */
+/* =========================================================== */
+.container {
+  perspective: 200px; /* Distance from viewer to 3D object */
+}
+
+/* =========================================================== */
+/*                   6. Hover Transformations                  */
+/* Note: Demonstrates various 3D transformations on hover      */
+/* =========================================================== */
+.container:hover .box {
+    transform: rotateY(40deg); /* Rotates around Y-axis vertically */
+    transform-origin: 0 50%; /* Rotation pivot: left-center edge */
+}
+
+/* =========================================================== */
+/*               7. Special Box Hover Transformation           */
+/* Note: Applies different rotation effect on special box      */
+/* =========================================================== */
+.container:hover .box-special {
+    transform: rotateX(45deg); /* Rotates around X-axis horizontally */
+}
+
+/* =========================================================== */
+/*              8. 3D Transformation Reference                 */
+/* Note:
+    - translateZ(+value): Moves element closer
+    - translateZ(-value): Moves element further
+    - perspective(value): Sets depth effect
+    - rotateX(): Rotation around horizontal axis
+    - rotateY(): Rotation around vertical axis
+    - transform-origin: Sets pivot point of transformation
+*/
+/* =========================================================== */
