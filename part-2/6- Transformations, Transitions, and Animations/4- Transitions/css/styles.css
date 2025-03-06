@@ -1,9 +1,67 @@
+/* =========================================================== */
+/*                     1. Root Font Size                       */
+/* Note: Base size (62.5%) for easier rem calculations         */
+/* =========================================================== */
 html {
   font-size: 62.5%;
 }
 
+/* =========================================================== */
+/*                      2. Body Styling                        */
+/* Note: Default text size for readability                     */
+/* =========================================================== */
+body {
+  font-size: 1.5rem;
+}
+
+/* =========================================================== */
+/*                     3. Box-Sizing Reset                     */
+/* Note: Ensures padding & border included in dimensions       */
+/* =========================================================== */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
+/* =========================================================== */
+/*                     4. Box Initial Style                    */
+/* Note: Defines basic dimensions, color, and transitions      */
+/* =========================================================== */
+.box {
+  width: 18rem;
+  height: 18rem;
+  background-color: gold;
+
+  /* Transition properties:
+         - Duration: total animation time
+         - Timing-function:
+             linear (constant speed), ease-in (slow start), ease-out (slow end), cubic-bezier()
+             (custom curve: cubic-bezier.com)
+         - Delay: wait time before animation starts
+      */
+  transition:
+    /* waits 1s, then smoothly transforms */
+    transform 2.5s linear 1s,
+    background 2.5s; /* smoothly transitions background */
+}
+
+/* =========================================================== */
+/*                    5. Box Hover Effects                     */
+/* Note: Applies rotation & color change smoothly on hover     */
+/* =========================================================== */
+.box:hover {
+  transform: rotate(45deg); /* Rotates box 45 degrees */
+  background: dodgerblue; /* Changes box color on hover */
+}
+
+/* =========================================================== */
+/*          6. Transitions & Animations Quick Reference        */
+/* Note:
+   - transition-property: CSS property to animate (e.g., transform)
+   - transition-duration: total animation duration
+   - transition-timing-function: animation speed curve
+     (linear | ease | ease-in | ease-out | cubic-bezier)
+   - transition-delay: delay before animation starts
+*/
+/* =========================================================== */
