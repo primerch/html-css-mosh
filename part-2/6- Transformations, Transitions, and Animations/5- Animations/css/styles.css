@@ -1,9 +1,85 @@
+/* ===========================================================
+                        Global Base Styles
+=========================================================== */
+
 html {
   font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem; /* Sets base font size to 15px */
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Includes padding/border within element dimensions */
 }
+
+/* ===========================================================
+                            Animations
+=========================================================== */
+
+/*
+ * Defines keyframes for the "pop" animation.
+ * Controls element transformations at specific points in time.
+ */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.5);
+  }
+
+  50% {
+    transform: rotate(45deg);
+    background-color: tomato;
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+/* ===========================================================
+                          Box Component
+=========================================================== */
+
+.box {
+  width: 15rem;
+  height: 15rem;
+  background-color: gold;
+
+  /* Animation Properties (clearly listed for clarity) */
+  animation-name: pop;                 /* Matches @keyframes identifier */
+  animation-duration: 4s;              /* Duration for one animation cycle */
+  animation-timing-function: ease-out; /* Animation speed curve */
+  animation-delay: 1s;                 /* Delay before animation begins */
+  animation-iteration-count: infinite; /* Repeats indefinitely */
+  animation-direction: reverse;        /* Animation runs from end to start */
+
+  /* Shorthand equivalent:
+     animation: pop 4s ease-out 1s infinite reverse; */
+}
+
+/* ===========================================================
+                 Animation Properties Reference
+=========================================================== */
+
+/*
+Quick reference for CSS animation properties:
+
+- animation-name: Identifies the keyframe animation.
+- animation-duration: Duration of the animation.
+- animation-timing-function: Defines the animation's speed curve.
+- animation-delay: Time to wait before animation starts.
+- animation-iteration-count: Number of times the animation repeats.
+- animation-direction: Playback direction (normal, reverse, alternate).
+- animation-fill-mode: Styling before/after animation.
+- animation-play-state: Controls running or paused state.
+
+Example shorthand syntax:
+animation: pop 4s ease-out 1s infinite alternate;
+*/
