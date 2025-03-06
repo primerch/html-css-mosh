@@ -1,0 +1,40 @@
+/*
+Best Practices for Writing Maintainable CSS:
+
+1. Follow a Consistent Naming Convention:
+   - Pick one style and use it consistently across your project.
+   - Examples:
+     - Kebab-case: .nav-bar
+     - CamelCase: .navBar
+     - PascalCase: .NavBar
+     - Underscore: .nav_bar
+
+2. Create Logical Sections in Your Stylesheets:
+   - Use comments to divide your CSS into meaningful parts.
+   - Examples:
+     - // Basic Styles
+     - // Typography
+     - // Forms
+     - // Navigation Bar
+
+3. Avoid Over-Specific Selectors:
+   - Keep selectors simple to improve maintainability.
+   - Example to avoid: div.nav > ul.items > li {}
+   - Reason: Deeply nested selectors are harder to manage.
+
+4. Avoid the !important Keyword:
+   - Use specificity and cascading rules instead whenever possible.
+
+5. Sort CSS Properties:
+   - Arrange properties in a logical order for better readability.
+
+6. Take Advantage of Style Inheritance:
+   - Reuse styles from parent elements where applicable.
+   - Example: font-family: inherit;
+
+7. Extract Repetitive Patterns:
+   - Identify and consolidate repeated styles into reusable classes.
+
+8. Avoid Repetitive Values:
+   - Keep your CSS concise by minimizing redundant values.
+*/
