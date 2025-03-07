@@ -1,0 +1,26 @@
+/* =========================================================== */
+/*                      1. Root Variables                      */
+/* Note: Define global CSS variables in :root                  */
+/* =========================================================== */
+:root {
+  --color-primary: #ffdd36; /* Primary color for backgrounds */
+  --border-size: 2px; /* Default border thickness */
+  --border-radius: 10px; /* Default border radius */
+}
+
+div {
+  height: 5rem;
+  width: 5rem;
+}
+
+/* =========================================================== */
+/*                    3. Using CSS Variables                   */
+/* Note: Use variables with var(--variable-name) syntax        */
+/* =========================================================== */
+.one {
+  background: var(--color-primary); /* Apply primary color variable */
+}
+
+.two {
+  background: var(--color-primary); /* Apply primary color variable */
+}
