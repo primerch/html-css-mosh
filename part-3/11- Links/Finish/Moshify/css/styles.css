@@ -113,4 +113,8 @@ a {
   .link-arrow::after {
     margin-left: 10px;
   }
+
+  .link-arrow:hover::after {
+    margin-left: 15px;
+  }
 }
