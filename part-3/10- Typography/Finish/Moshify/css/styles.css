@@ -6,55 +6,120 @@
   --color-body: #918ca4;
 }
 
+/*
+  7. Set base font-size for the root html element.
+     Reason: Common modern practice to set it as 62.5%.
+     - Browsers default is typically 16px, therefore 62.5% * 16px = 10px.
+     - Simplifies calculations: 1rem = 10px (easy and intuitive to scale sizes).
+*/
 html {
-  /* 62.5% of 16px = 10px */
   font-size: 62.5%;
 }
 
 body {
+  /*
+      2. Define primary font-family.
+         Reason: Using external Google font "Inter" first for consistent branding and modern appearance.
+         Fallback fonts Arial and Helvetica are universally available for compatibility.
+    */
   font-family: Inter, Arial, Helvetica, sans-serif;
-  font-size: 2.4rem;
-  line-height: 1.5;
+
+  /*
+      4. Set the default text color for general body text.
+         Reason: Improves readability and maintains a consistent color theme defined by design.
+    */
   color: var(--color-body);
+
+  /*
+      9. Set default font-size for mobile version body text.
+         Reason: Matches mockup and improves readability on small screens.
+         Calculation: 2.4rem = 24px (with current html base 1rem = 10px).
+    */
+  font-size: 2.4rem;
+
+  /*
+      10. Increase the vertical spacing between text lines (line-height).
+          Reason: The original line spacing is too compact; adding spacing improves readability.
+          Calculation: line-height: 1.5 is equal to 1.5 times current font-size (24px * 1.5 = 36px).
+    */
+  line-height: 1.5;
 }
 
 h1,
 h2,
 h3 {
+  /*
+       5. Set specific color for heading elements.
+          Reason: Differentiates clearly from normal body text and maintains a consistent color scheme.
+    */
   color: var(--color-headings);
+
+  /*
+       11. Adjust bottom margin for headings.
+           Reason: The initial margin was visually excessive due to the extra space below heading letters; reduce it to improve visual spacing between headings and following content.
+    */
   margin-bottom: 1rem;
 }
 
 h1 {
+  /*
+       6. Set font-size for main heading (h1).
+          Reason: Matches Photoshop mockup design precisely (70px).
+          Calculation: 7rem = 70px (1rem = 10px as defined earlier).
+    */
   font-size: 7rem;
 }
 
 h2 {
+  /*
+       8. Set font-size for sub-heading level h2.
+          Reason: Matches design requirement and visual hierarchy.
+          Calculation: 4rem = 40px given root font setting.
+    */
   font-size: 4rem;
 }
 
 h3 {
+  /*
+       8. Set font-size for sub-heading level h3.
+          Reason: Proper hierarchical distinction between h2 and subsequent text.
+          Calculation: 3rem = 30px given root font setting.
+    */
   font-size: 3rem;
 }
 
 p {
+  /*
+       12. Remove top margin from paragraphs to avoid margin-collapsing effect.
+           Reason: By default, paragraphs have margin-top which causes the larger margin to win (collapsing effect) when placed below headings.
+           Setting margin-top to 0 means spacing between heading (bottom margin) and paragraph is decided only by heading, thus more predictable.
+    */
   margin-top: 0;
 }
 
+/*
+  13. Media Queries for larger screens (Desktop Versions; screen width >=1024px).
+      Reason: Adopt mobile-first design, then implement desktop-specific styling via media queries.
+      - Improves responsive scaling and readability on larger screens.
+*/
 @media screen and (min-width: 1024px) {
   body {
+    /* Adjust body font-size smaller for desktop, as viewing distance differs (1.8rem = 18px). */
     font-size: 1.8rem;
   }
 
   h1 {
+    /* Slightly increase h1 for a better visual impact on desktop screens (8rem = 80px). */
     font-size: 8rem;
   }
 
   h2 {
+    /* Keep h2 consistent to maintain stable visual hierarchy (4rem = 40px). */
     font-size: 4rem;
   }
 
   h3 {
+    /* Slightly decrease h3 to effectively create clearer visual hierarchy on desktop (2.4rem = 24px). */
     font-size: 2.4rem;
   }
 }
