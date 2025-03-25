@@ -9,7 +9,7 @@
 /* Typography */
 
 html {
-  /* 62.5% of 16px = 10px */
+  /* 62.5% of 16px browser default font size sets 1rem as 10px, facilitating simple rem calculations across the project */
   font-size: 62.5%;
 }
 
@@ -61,30 +61,56 @@ p {
   }
 }
 
-/* Links */
 a {
   text-decoration: none;
 }
 
+/* Links */
 .link-arrow {
+  /* 1. Set link color to the accent color variable; start designing for mobile first, then override if necessary with desktop-specific rules */
   color: var(--color-accent);
+
+  /* 2. Convert link texts to uppercase for stylistic consistency and readability */
   text-transform: uppercase;
+
+  /* 3. Define base font size for link on mobile screens */
   font-size: 2rem;
+
+  /* 4. Apply bold weight to emphasize importance and distinguish links visually */
   font-weight: bold;
 }
 
 .link-arrow::after {
-  content: "-->";
+  /* 5. Add an arrow indicator after the link's text using the pseudo-element '::after';
+        Utilizing a pseudo-element instead of direct HTML content promotes separation of style (CSS) and content (HTML),
+        and helps better maintainability and scalability.
+        Use fixed pixel unit (px) for the gap between text and arrow to ensure consistent spacing regardless of responsive scaling. */
+  content: "->";
   margin-left: 5px;
+
+  /* 7. Define a smooth transition for animating the margin move;
+        adding a transition here instantly prepares CSS to animate any future change to the margin property smoothly.
+        This subtle animation provides a pleasant visual interaction for users. */
   transition: margin 0.15s;
 }
 
+/* 6. On hover, increase margin on left side of arrow to visually move it slightly right,
+      providing a clear and intuitive hover-state feedback to users */
 .link-arrow:hover::after {
   margin-left: 10px;
 }
 
+/*
+8. Create desktop-specific link styling rules separately within a component-specific media query for better maintainability.
+   Avoid placing these rules in the global media query above to prevent scattered rules and improve readability,
+   making styles easy to locate and edit per component.
+*/
 @media screen and (min-width: 1024px) {
   .link-arrow {
     font-size: 1.5rem;
+  }
+
+  .link-arrow::after {
+    margin-left: 10px;
   }
 }
