@@ -82,15 +82,20 @@ a {
 
 .link-arrow::after {
   /* 5. Add an arrow indicator after the link's text using the pseudo-element '::after';
-        Utilizing a pseudo-element instead of direct HTML content promotes separation of style (CSS) and content (HTML),
-        and helps better maintainability and scalability.
-        Use fixed pixel unit (px) for the gap between text and arrow to ensure consistent spacing regardless of responsive scaling. */
+          Utilizing a pseudo-element instead of direct HTML content promotes separation of style (CSS) and content (HTML),
+          and helps better maintainability and scalability.
+          Use fixed pixel unit (px) for the gap between text and arrow to ensure consistent spacing regardless of responsive scaling. */
+
+  /*
+      - The text part: `"learn more"` — this is your actual link content and it's directly styled through your `.link-arrow` class.
+      - The arrow part: `"-->"` — This is created separately using the CSS pseudo-element `::after`. It behaves as a separate element
+        so it has its own styling rules like margin, padding, animations, and transitions. */
   content: "->";
   margin-left: 5px;
 
   /* 7. Define a smooth transition for animating the margin move;
-        adding a transition here instantly prepares CSS to animate any future change to the margin property smoothly.
-        This subtle animation provides a pleasant visual interaction for users. */
+          adding a transition here instantly prepares CSS to animate any future change to the margin property smoothly.
+          This subtle animation provides a pleasant visual interaction for users. */
   transition: margin 0.15s;
 }
 
