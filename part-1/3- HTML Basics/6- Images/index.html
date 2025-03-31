@@ -12,18 +12,20 @@
       img {
         width: 200px;
         height: 200px;
-
-        /* =========================================================== */
-        /*                   2. object-fit                           */
-        /* =========================================================== */
-        object-fit: contain;
+        /*
+        The "object-fit: cover;" property behaves in three steps:
+        1. Scales the image proportionally so its smallest dimension fully fits the container (200px by 200px).
+        2. The other dimension scales proportionally, exceeding container size and maintaining original image proportions.
+        3. Excess areas of the image (vertical in this example because the original height is greater) are cropped equally from both sides, centered by default.
+      */
+        object-fit: cover; /* alternative: object-fit: contain; */
       }
     </style>
   </head>
   <body>
     <!-- =========================================================== -->
-    <!--                   1. <img>                                -->
+    <!--                         1. <img>                            -->
     <!-- =========================================================== -->
-    <img alt="A coffee mug on a table" src="./images/coffee.jpg" />
+    <img alt="a mug of coffee" src="./images/coffee.jpg" />
   </body>
 </html>
