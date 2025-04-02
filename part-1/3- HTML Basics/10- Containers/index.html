@@ -9,6 +9,9 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>Document</title>
     <style>
+      /* =========================================================== */
+      /*                         CSS Styles                          */
+      /* =========================================================== */
       .product {
         background-color: gold;
         width: 300px;
@@ -20,7 +23,30 @@
     </style>
   </head>
   <body>
-    <!-- 1. <div> is a block element -->
+    <!-- =========================================================== -->
+    <!--               HTML Element Display Types                    -->
+    <!-- =========================================================== -->
+    <!--
+  +----------------+---------------------+----------------------------+
+  | Display Type   | Characteristics     | Example HTML Element       |
+  +----------------+---------------------+----------------------------+
+  | block          | takes full width,   | <div>, <p>                 |
+  |                | new line before     |                            |
+  |                | and after           |                            |
+  +----------------+---------------------+----------------------------+
+  | inline         | doesn't start new   | <span>, <a>                |
+  |                | line, width as per  |                            |
+  |                | content             |                            |
+  +----------------+---------------------+----------------------------+
+  | inline-block   | flows inline yet    | images (<img>), can set    |
+  |                | allows set width/   | via CSS                    |
+  |                | height              | (`display: inline-block;`) |
+  +----------------+---------------------+----------------------------+
+ -->
+
+    <!-- =========================================================== -->
+    <!--             Example of 'block' elements: <div>, <p>         -->
+    <!-- =========================================================== -->
     <div class="product">
       <p>Lorem ipsum dolor sit amet.</p>
       <a href="#">Link</a>
@@ -30,9 +56,11 @@
       <a href="#">Link</a>
     </div>
 
+    <!-- =========================================================== -->
+    <!--          Example of 'inline' element: <span>                -->
+    <!-- =========================================================== -->
     <p>
-      <!-- 2. <span> is a inline element -->
-      <span class="highlight"> Lorem </span>ipsum dolor sit amet, consectetur
+      <span class="highlight">Lorem</span> ipsum dolor sit amet, consectetur
       adipisicing elit. Architecto, mollitia.
     </p>
   </body>
