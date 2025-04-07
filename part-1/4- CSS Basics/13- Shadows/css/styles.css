@@ -1,3 +1,46 @@
+/*
+============================================================
+🔖 QUICK CSS REFERENCE 🔖
+============================================================
+
+🟢 box-shadow:
+- Applies shadow around the box (element).
+- Shadow respects element's shape and boundary.
+- Allows control over offset, blur, spread, and color.
+- Syntax: box-shadow: offset-x offset-y blur-radius spread-radius color;
+
+🟢 text-shadow:
+- Applies shadow specifically to the textual content only.
+- Doesn't affect the surrounding box or image elements.
+- Only supports offset-x, offset-y, blur-radius, and color (no spread radius!).
+- Syntax: text-shadow: offset-x offset-y blur-radius color;
+
+🟢 filter: drop-shadow():
+- Applies shadow based directly on element shape and alpha transparency (useful for irregular shapes or transparent images/icons).
+- Different from box-shadow as it respects element transparency and outline.
+- Does not include a spread radius, only accepts offset-x, offset-y, blur-radius, and color.
+- Syntax: filter: drop-shadow(offset-x offset-y blur-radius color);
+
+============================================================
+
+EXAMPLES BELOW WITH COMMENTS:
+
+*/
+
+/*
+box-shadow: 10px 10px  0px  60px  green;
+             │    │     │     │     │
+             │    │     │     │     └──► Color (green)
+             │    │     │     │
+             │    │     │     └─────► Spread radius (expanding shadow size)
+             │    │     │
+             │    │     └───────────► Blur radius (softness of shadow)
+             │    │
+             │    └─────────────────► Vertical offset (downwards)
+             │
+             └──────────────────────► Horizontal offset (to the right)
+*/
+
 .box {
   width: 200px;
   height: 200px;
@@ -5,21 +48,32 @@
   background: dodgerblue;
 
   /* ======================================================= */
-  /* 1. Box Shadow: x-offset, y-offset, blur-radius, color   */
+  /* 📌 1. Standard Box Shadow:
+     - Shadow offsets right & downwards, adds blur           */
   /* ======================================================= */
-  box-shadow: 10px 10px 30px grey;
+  box-shadow: 10px 10px 30px grey; /* offset-x offset-y blur color */
 
   /* ======================================================= */
-  /* 2. Full Element Shadow                                  */
+  /* 📌 2. Full Surround Shadow (No offset = centered shadow):
+     - Creates softer highlight shadow around the object     */
   /* ======================================================= */
-  box-shadow: 0 0 30px grey;
+  /* box-shadow: 0 0 30px grey; */ /* centered glow effect */
 }
 
 h1 {
   color: white;
 
   /* ======================================================= */
-  /* 1. Semi-Transparent Black Text Shadow                  */
+  /* 📌 Text-only Shadow:
+     - Applies shadow only behind text characters            */
   /* ======================================================= */
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* offset-x offset-y blur color */
 }
+
+/* ========= ✅ Example: Drop-shadow filter (for images/icons) */
+/*
+img {
+  filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.3));
+}
+- Shadow follows image transparency, perfect for PNG, SVG with transparent backgrounds
+*/
