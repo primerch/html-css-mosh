@@ -1,45 +1,139 @@
+/* ======================================================= */
+/*                   CSS Gradient Guide                     */
+/* ======================================================= */
+
+/*
+  ---------------------------------------------------------
+              Easy Explanation of Percentages
+  ---------------------------------------------------------
+
+  ► When providing **one percentage** after a color:
+    - This percentage marks exactly where the color stops smoothly blending into the next.
+      Example:
+      linear-gradient(to right, red 20%, yellow);
+      Red starts at 0%, reaches full intensity immediately, and blends smoothly into yellow until the end (100%), starting the transition at 20%.
+
+      Visual Example:
+      0%        20%                             100%
+      |----------|--------------------------------|
+      [  RED → transition smoothly → YELLOW ]
+
+  ► When providing **two percentages** after a color:
+    - The first percentage is where the color starts fully saturated.
+    - The second percentage is where the color ends abruptly (instantly changes to the next color without blending).
+      Example:
+      linear-gradient(to right, red 0% 20%, yellow 20% 100%);
+      Red is solid from 0% to 20%, and at 20%, it immediately switches to solid yellow.
+
+      Visual Example:
+      0%         20%                            100%
+      |-----------|-------------------------------|
+      [  solid RED  ][       solid YELLOW        ]
+*/
+
+/* ======================================================= */
+/*              Detailed Gradient Examples                  */
+/* ======================================================= */
+
+/*
+-----------------------------------------
+Example #1 - Multiple Colors Smoothly Blended:
+-----------------------------------------
+background: linear-gradient(to right, red 20%, yellow 50%, blue 80%);
+
+Positions explained:
+- From 0% to 20%: Red
+- 20% - 50%: Red gradually changes smoothly to Yellow
+- 50% - 80%: Yellow gradually changes smoothly to Blue
+- 80% - 100%: Solid Blue
+
+Visual representation:
+0%       20%              50%              80%       100%
+|--------|----------------|-----------------|---------|
+[  RED   ][Red → Yellow  ][Yellow → Blue   ][  BLUE   ]
+*/
+
+/*
+-----------------------------------------
+Example #2 - Multiple Solid Colors
+-----------------------------------------
+
+CSS Example:
+-------------
+background: linear-gradient(
+    to right,
+    red 0% 20%,
+    yellow 20% 40%,
+    green 40% 60%,
+    purple 60% 80%,
+    pink 80% 100%
+);
+
+Explanation:
+------------
+- Red is solid from 0% to 20%.
+- Yellow is solid from 20% to 40%.
+- Green is solid from 40% to 60%.
+- Purple is solid from 60% to 80%.
+- Pink is solid from 80% to 100%.
+
+Visual representation:
+----------------------
+0%       20%       40%       60%       80%        100%
+|--------|---------|---------|---------|-----------|
+[  RED   ][ YELLOW ][ GREEN  ][ PURPLE ][   PINK   ]
+*/
+
+/* ======================================================= */
+/*                  CSS Class with Gradients                */
+/* ======================================================= */
+
 .box {
   width: 600px;
   height: 200px;
 
-  /* ======================================================= */
-  /*                  1. Linear Gradient                     */
-  /* ======================================================= */
+  /* ------------------------------------------------------- */
+  /* 1. Linear Gradient (Default Direction: top to bottom)   */
+  /* ------------------------------------------------------- */
   background: linear-gradient(dodgerblue, yellow);
 
-  /* ======================================================= */
-  /*           2. Linear Gradient with Direction             */
-  /* ======================================================= */
+  /* ------------------------------------------------------- */
+  /* 2. Linear Gradient with Specified Directions            */
+  /* ------------------------------------------------------- */
+  /* Horizontal Gradient: Left to Right */
   background: linear-gradient(to right, dodgerblue, yellow);
+
+  /* Diagonal Gradient: Top Left to Bottom Right */
   background: linear-gradient(to bottom right, dodgerblue, yellow);
 
-  /* ======================================================= */
-  /*          3. Linear Gradient with Color Stops            */
-  /* ======================================================= */
+  /* ------------------------------------------------------- */
+  /* 3. Linear Gradient (Sharp abrupt color changing at 50%) */
+  /* ------------------------------------------------------- */
+  /* Dodgerblue solid until 50%, sharp switch to Yellow starting from 50% */
   background: linear-gradient(90deg, dodgerblue 50%, yellow 50%);
 
-  /* ======================================================= */
-  /*         4. Linear Gradient with Multiple Colors         */
-  /* ======================================================= */
+  /* ------------------------------------------------------- */
+  /* 4. Linear Gradient with Multiple Colors Blending        */
+  /* ------------------------------------------------------- */
   background: linear-gradient(45deg, dodgerblue, yellow, tomato);
 
-  /* ======================================================= */
-  /*                  5. Radial Gradient                     */
-  /* ======================================================= */
+  /* ------------------------------------------------------- */
+  /* 5. Radial Gradient (default ellipse shape)              */
+  /* ------------------------------------------------------- */
   background: radial-gradient(white, yellow);
 
-  /* ======================================================= */
-  /*          6. Radial Gradient with Circle Shape           */
-  /* ======================================================= */
+  /* ------------------------------------------------------- */
+  /* 6. Radial Gradient: Circle shape                        */
+  /* ------------------------------------------------------- */
   background: radial-gradient(circle, white, yellow);
 
-  /* ======================================================= */
-  /*      7. Radial Gradient with Specified Position         */
-  /* ======================================================= */
+  /* ------------------------------------------------------- */
+  /* 7. Radial Gradient: Circle shape with position          */
+  /* ------------------------------------------------------- */
   background: radial-gradient(circle at top left, white, yellow);
 
-  /* ======================================================= */
-  /*           8. Online Gradient Generator                  */
-  /* ======================================================= */
-  /* Use tools like cssgradient.io for advanced gradients. */
+  /* ------------------------------------------------------- */
+  /* 8. Online Gradient Generator                            */
+  /* ------------------------------------------------------- */
+  /* Helpful tool for advanced gradients: cssgradient.io */
 }
