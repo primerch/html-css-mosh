@@ -21,6 +21,9 @@
 - Does not include a spread radius, only accepts offset-x, offset-y, blur-radius, and color.
 - Syntax: filter: drop-shadow(offset-x offset-y blur-radius color);
 
+- For rectangular boxes/containers → **always use `box-shadow`**, because it's more predictable and consistent.
+- For when you require shadows that respect transparency or non-rectangular shapes (SVG, Icons, PNG images) → **use `filter: drop-shadow`**.
+
 ============================================================
 
 EXAMPLES BELOW WITH COMMENTS:
