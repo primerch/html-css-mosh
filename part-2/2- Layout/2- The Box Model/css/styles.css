@@ -1,35 +1,100 @@
-/* =========================================================== */
-/*                     1. Padding Order                       */
-/* Note: Padding values are set in clockwise order:            */
-/*       top, right, bottom, left.                             */
-/* =========================================================== */
+/* ====================================================== */
+/*                      1. Padding Order                  */
+/* ------------------------------------------------------ */
+/* Padding values are applied in clockwise order:         */
+/*  top → right → bottom → left                           */
+/*                                                        */
+/* Example: padding: 10px 20px 30px 40px;                 */
+/*   - Top:    10px                                       */
+/*   - Right:  20px                                       */
+/*   - Bottom: 30px                                       */
+/*   - Left:   40px                                       */
+/* ====================================================== */
 p {
   padding: 10px 20px 10px 20px;
 }
 
-/* =========================================================== */
-/*                    2. Margin Collapsing                    */
-/* Note: Collapsing applies only to vertical margins of        */
-/*       adjacent elements, reducing combined space.           */
-/* =========================================================== */
-p {
-  padding: 20px;
-  margin: 0;
-}
+/* ====================================================== */
+/*                    2. Margin Collapsing                */
+/* ------------------------------------------------------ */
+/* Margin collapsing occurs when vertical margins of      */
+/* adjacent elements combine into a single margin—        */
+/* only the largest margin value is applied.              */
+/*                                                        */
+/* This behavior only affects vertical margins            */
+/* (margin-top and margin-bottom), NOT horizontal margins.*/
+/* ------------------------------------------------------ */
+/* Example below demonstrates vertical margins collapsing:*/
+/* ====================================================== */
 
+/* Collapsed margin example */
+/* p {
+     padding: 20px;
+     margin: 0;
+   }
+*/
+
+/* Actual margin applied */
 p {
   padding: 0;
   margin: 20px;
 }
 
-/* =========================================================== */
-/*                    3. Inline Styles                        */
-/* Note: Editing CSS in the browser creates inline styles in   */
-/*       the DOM.                                              */
-/* =========================================================== */
+/* ====================================================== */
+/*                      3. Inline Styles                  */
+/* ------------------------------------------------------ */
+/* Editing CSS directly in the browser generates inline   */
+/* styles within the DOM (Document Object Model).         */
+/*                                                        */
+/* Inline styles override CSS stylesheets due to higher   */
+/* specificity, but can complicate styling maintenance.   */
+/* ====================================================== */
 
-/* =========================================================== */
-/*                4. Margin vs Padding                        */
-/* Note: Use margin for spacing between elements and padding   */
-/*       for spacing inside the border.                       */
-/* =========================================================== */
+/* ====================================================== */
+/*                4. Margin vs Padding                    */
+/* ------------------------------------------------------ */
+/* Correct usage of spacing properties:                   */
+/*                                                        */
+/* - Margin:                                              */
+/*   Use for spacing between elements (outside borders).  */
+/*                                                        */
+/* - Padding:                                             */
+/*   Use for spacing within elements (inside borders).    */
+/*                                                        */
+/* Example:                                               */
+/* margin: 20px;    ← space between elements              */
+/* padding: 10px;   ← space inside the element border     */
+/* ====================================================== */
+
+/* ====================================================== */
+/*                   5. CSS Box Model                     */
+/* ------------------------------------------------------ */
+/* The CSS Box Model describes the layout and spacing of  */
+/* elements in a web page.                                */
+/*                                                        */
+/* It consists of the following components (from inner to */
+/* outer):                                                */
+/* - Content: actual text or images displayed             */
+/* - Padding: space around the content within the element */
+/*            border                                      */
+/* - Border: outline around the padding and content       */
+/* - Margin: external spacing around the element itself   */
+/*                                                        */
+/* Visual Representation:                                 */
+/*                                                        */
+/*  ┌──────────────────────────────────────────────────┐  */
+/*  │ Margin                                           │  */
+/*  │ ┌──────────────────────────────────────────────┐ │  */
+/*  │ │ Border                                       │ │  */
+/*  │ │ ┌──────────────────────────────────────────┐ │ │  */
+/*  │ │ │ Padding                                  │ │ │  */
+/*  │ │ │ ┌──────────────────────────────────────┐ │ │ │  */
+/*  │ │ │ │ Content                              │ │ │ │  */
+/*  │ │ │ └──────────────────────────────────────┘ │ │ │  */
+/*  │ │ └──────────────────────────────────────────┘ │ │  */
+/*  │ └──────────────────────────────────────────────┘ │  */
+/*  └──────────────────────────────────────────────────┘  */
+/*                                                        */
+/* Understanding the box model helps control layout and   */
+/* design precisely.                                      */
+/* ====================================================== */
