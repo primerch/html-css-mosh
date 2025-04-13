@@ -1,27 +1,69 @@
-/* =========================================================== */
-/*                   1. Universal Selector                    */
-/* Note: Applies box-sizing to all elements & pseudo-elements */
-/*       (Pseudo-elements must be explicitly targeted)        */
-/* =========================================================== */
+/* ================================================================= */
+/*                        1. Universal Selector                      */
+/* ----------------------------------------------------------------- */
+/* (*) the universal selector:                                       */
+/* Targets all elements, including pseudo-elements explicitly        */
+/* (::before, ::after).                                              */
+/*                                                                   */
+/* box-sizing: border-box;                                           */
+/*                                                                   */
+/* WHY use this property?                                            */
+/* - Ensures that padding and borders are included within given      */
+/*   dimensions (width/height), preventing unexpected layout         */
+/*   shifts and overflow.                                            */
+/* - Provides consistent and predictable layout sizing, improving    */
+/*   content visibility and simplifying design/testing.              */
+/* ================================================================= */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* =========================================================== */
-/*                2. Pseudo-element Example                   */
-/* =========================================================== */
+/* ================================================================= */
+/*                      2. Pseudo-element Usage                      */
+/* ----------------------------------------------------------------- */
+/* (::before, ::after) are used to:                                  */
+/* - Add additional content or decorative details without extra      */
+/*   HTML tags.                                                      */
+/* - Place content "before" or "after" the targeted element.         */
+/*                                                                   */
+/* Example: Inserts "Hello" text before each ".box" element.         */
+/* ================================================================= */
 .box::before {
   content: "Hello";
-  display: block;
+  display: block; /* sets it as separate block (new line) */
 }
 
-/* =========================================================== */
-/*                 3. Sizing & Display Types                  */
-/* Note: block = new line, full width; inline = no new line,  */
-/*       no width/height; inline-block = no new line, w/h ok  */
-/* =========================================================== */
+/* ================================================================= */
+/*               3. CSS Display Property Comparison                  */
+/* ----------------------------------------------------------------- */
+/* | Property       | Width/Height | Margin & Padding | New Line?   | */
+/* |----------------|--------------|------------------|-------------| */
+/* | block          | ✅ Respected | ✅ Fully usable  | ✅ Yes      | */
+/* | inline         | ❌ Ignored   | ⚠️ Limited (no vertical)| ❌ No| */
+/* | inline-block   | ✅ Respected | ✅ Fully usable  | ❌ No       | */
+/* ----------------------------------------------------------------- */
+/*                                                                   */
+/* Quick Reference Details:                                          */
+/* - block:                                                          */
+/*   Ideal for standalone elements (div, p, sections).               */
+/*   Takes available full width, forces new lines.                   */
+/*                                                                   */
+/* - inline:                                                         */
+/*   Ideal for text or internal content (span, links).               */
+/*   Width/Height settings ignored; margins/padding restricted       */
+/*   vertically; elements flow horizontally inline.                  */
+/*                                                                   */
+/* - inline-block:                                                   */
+/*   Hybrid of "inline" (flows inline) + "block" behavior            */
+/*   (width/height and margins are fully respected, good for         */
+/*   buttons, images, aligned boxes).                                */
+/*                                                                   */
+/* Example Usage: ".box" styled as inline-block allows you to set    */
+/* dimensions, padding, margin, borders, and alignment inline with   */
+/* other elements.                                                   */
+/* ================================================================= */
 .box {
   width: 100px;
   height: 100px;
