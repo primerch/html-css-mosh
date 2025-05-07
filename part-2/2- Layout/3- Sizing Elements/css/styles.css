@@ -44,26 +44,6 @@
 /* | inline         | ❌ Ignored   | ⚠️ Limited (no vertical)| ❌ No| */
 /* | inline-block   | ✅ Respected | ✅ Fully usable  | ❌ No       | */
 /* ----------------------------------------------------------------- */
-/*                                                                   */
-/* Quick Reference Details:                                          */
-/* - block:                                                          */
-/*   Ideal for standalone elements (div, p, sections).               */
-/*   Takes available full width, forces new lines.                   */
-/*                                                                   */
-/* - inline:                                                         */
-/*   Ideal for text or internal content (span, links).               */
-/*   Width/Height settings ignored; margins/padding restricted       */
-/*   vertically; elements flow horizontally inline.                  */
-/*                                                                   */
-/* - inline-block:                                                   */
-/*   Hybrid of "inline" (flows inline) + "block" behavior            */
-/*   (width/height and margins are fully respected, good for         */
-/*   buttons, images, aligned boxes).                                */
-/*                                                                   */
-/* Example Usage: ".box" styled as inline-block allows you to set    */
-/* dimensions, padding, margin, borders, and alignment inline with   */
-/* other elements.                                                   */
-/* ================================================================= */
 .box {
   width: 100px;
   height: 100px;
