@@ -117,12 +117,12 @@ html {
 /* Here's a visual comparison to help understand how                    */
 /* flex: auto behaves differently from other flex values:               */
 /* -------------------------------------------------------------------- */
-/* | Flex Value    | flex-grow | flex-shrink | flex-basis | Behavior   | */
-/* |-------------- |-----------|-------------|------------|------------| */
-/* | flex: none    | 0         | 0           | auto       | Fixed size | */
-/* | flex: 1       | 1         | 1           | 0          | Grow/shrink| */
-/* | flex: initial | 0         | 1           | auto       | Shrinks    | */
-/* | flex: auto    | 1         | 1           | auto       | Grow/shrink| */
+/* | Flex Value  | flex-grow | flex-shrink | flex-basis | Analogy                                   | */
+/* |-------------|-----------|-------------|------------|-------------------------------------------| */
+/* | flex: none  | 0         | 0           | auto       | Stubborn Box: Won't grow or shrink, stays its natural size. | */
+/* | flex: 1     | 1         | 1           | 0          | Greedy Sponge: Grows and shrinks fully, ignores content size. | */
+/* | flex: initial | 0       | 1           | auto       | Shy Kid: Won't grow, but shrinks if pushed, respects content. | */
+/* | flex: auto  | 1         | 1           | auto       | Team Player: Grows, shrinks, and respects content size. | */
 /* -------------------------------------------------------------------- */
 /* ==================================================================== */
 
