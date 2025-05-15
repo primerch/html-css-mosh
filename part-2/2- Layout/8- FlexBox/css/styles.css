@@ -25,7 +25,7 @@ html {
 /* items    — positions individual flex items                           */
 /* ==================================================================== */
 
-.container {
+.gallery {
   display: flex;
   border: 3px solid grey;
   height: 90vh;
@@ -38,7 +38,7 @@ html {
 /* Values: row, row-reverse, column, column-reverse                     */
 /* ==================================================================== */
 
-.container {
+.gallery {
   flex-direction: row;
 }
 
@@ -49,7 +49,7 @@ html {
 /* Values: flex-start, flex-end, center, space-between, space-around, space-evenly */
 /* ==================================================================== */
 
-.container {
+.gallery {
   justify-content: center;
 }
 
@@ -60,7 +60,7 @@ html {
 /* Values: stretch, flex-start, center, flex-end, baseline              */
 /* ==================================================================== */
 
-.container {
+.gallery {
   align-items: center;
 }
 
@@ -83,7 +83,7 @@ html {
 /* Values: stretch, flex-start, center, flex-end, space-between, space-around */
 /* ==================================================================== */
 
-.container {
+.gallery {
   align-content: center;
 }
 

@@ -9,13 +9,13 @@
 /*                    3. Media Queries (Screen)              */
 /* =========================================================== */
 @media screen and (min-width: 600px) and (max-width: 900px) {
-  .container {
+  .gallery {
     flex-direction: row;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1200px) {
-  .container {
+  .gallery {
     flex-direction: row;
   }
 

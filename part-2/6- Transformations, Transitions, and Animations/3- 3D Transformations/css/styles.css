@@ -45,7 +45,7 @@ body {
 /*   unified viewpoint for all child elements, resulting in    */
 /*   consistent, realistic 3D transformations.                 */
 /* =========================================================== */
-.container {
+.gallery {
   perspective: 200px; /* Distance from viewer to 3D object */
 }
 
@@ -53,7 +53,7 @@ body {
 /*                   6. Hover Transformations                  */
 /* Note: Demonstrates various 3D transformations on hover      */
 /* =========================================================== */
-.container:hover .box {
+.gallery:hover .box {
     transform: rotateY(40deg); /* Rotates around Y-axis vertically */
     transform-origin: 0 50%; /* Rotation pivot: left-center edge */
 }
@@ -62,7 +62,7 @@ body {
 /*               7. Special Box Hover Transformation           */
 /* Note: Applies different rotation effect on special box      */
 /* =========================================================== */
-.container:hover .box-special {
+.gallery:hover .box-special {
     transform: rotateX(45deg); /* Rotates around X-axis horizontally */
 }
 

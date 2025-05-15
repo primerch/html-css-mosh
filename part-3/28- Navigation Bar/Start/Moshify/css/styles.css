@@ -610,7 +610,7 @@ a {
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
 }
 
-.container {
+.gallery {
   max-width: 1140px;
   margin: 0 auto;
 }
