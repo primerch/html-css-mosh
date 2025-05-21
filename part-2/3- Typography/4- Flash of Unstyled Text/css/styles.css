@@ -1,134 +1,27 @@
 /*
-1. `font-display: auto
+| font-display | Behavior                                                                                       | Invisible Text Duration | What User Sees After (3-day font load, very slow network)                                                                                                               |
+|:------------:|:----------------------------------------------------------------------------------------------|:----------------------:|:------------------------------------------------------------------------------------------------------------------------------------------|
+| auto         | Browser default: usually "block" (invisible up to 3s), may act like "swap" in some browsers   | Up to 3s               | Fallback font after up to 3s, text swaps to custom font only if font loads (after 3 days, font finally appears)                           |
+| block        | Text invisible for up to 3s, then fallback font, swaps to custom font only when loaded         | Up to 3s               | Fallback font after 3s, swaps to custom font after 3 days (when the font finally loads)                                                   |
+| swap         | Fallback font is shown instantly, swaps to custom font as soon as it loads                     | 0s                     | Fallback font is visible until font loads (3 days), then swaps to custom font                                                             |
+| fallback     | Text invisible for about 100ms, then fallback font is used. Swaps to custom font only if very fast | ~100ms                 | Fallback font is shown almost instantly, but swap to custom font only happens if the font loads quickly (not in 3 days)                   |
+| optional     | Like "fallback", but browser tries to use custom font only if it can be loaded quickly or from cache. On first slow load, only fallback; on subsequent visits, custom font may show immediately if cached. | ~100ms                 | First slow load: fallback font only, custom font is not shown.<br>Second load (if font is cached): custom font can appear immediately if available in cache.               |
 
-Behavior: Browser default (usually similar to block).
-Phases:
-· Block Period: ~3s (text invisible).
-· Swap Period: Infinite.
-· Failure Period: Never.
-
-Scenario:
-· 0–3s: Text invisible (FOIT).
-· After 3s: Falls back to system font.
-· After 3 days: Swaps to custom font permanently.
-
-Use Case: Prioritizes font consistency but risks invisible text on slow networks.
-2. `font-display: block
-
-Behavior: 3s block + infinite swap.
-Phases:
-· Block Period: ~3s (text invisible).
-· Swap Period: Infinite.
-· Failure Period: Never.
-
-Scenario:
-· 0–3s: Text invisible.
-· After 3s: Uses fallback font.
-· After 3 days: Swaps to custom font.
-
-Use Case: Critical branding (font must load eventually).
-3. `font-display: swap
-
-Behavior: 100ms block + infinite swap.
-Phases:
-· Block Period: ~100ms (text invisible).
-· Swap Period: Infinite.
-· Failure Period: Never.
-
-Scenario:
-· 0–100ms: Text invisible.
-· After 100ms: Uses fallback font.
-· After 3 days: Swaps to custom font.
-
-Use Case: Balances quick content visibility with eventual font consistency (e.g., body text).
-4. `font-display: fallback
-
-Behavior: 100ms block + 3s swap.
-Phases:
-· Block Period: ~100ms (text invisible).
-· Swap Period: ~3s.
-· Failure Period: After 3s.
-
-Scenario:
-· 0–100ms: Text invisible.
-· 100ms–3s: Uses fallback font but keeps trying to load.
-· After 3s: Permanently locks to fallback font.
-· After 3 days: No swap (too late).
-
-Use Case: Optimizes performance; sacrifices font consistency on slow networks.
-5. `font-display: optional
-
-Behavior: 100ms block + no swap.
-Phases:
-· Block Period: ~100ms (text invisible).
-· Swap Period: 0s.
-· Failure Period: Immediate after block.
-
-Scenario:
-· 0–100ms: Text invisible.
-· After 100ms: Permanently uses fallback font.
-· After 3 days: No swap (ignores loaded font).
-
-Use Case: Non-essential fonts or unstable connections (e.g., mobile users).
-SUMMARY
-
-Block Period:
-· block/auto: ~3s.
-· swap/fallback/optional: ~100ms.
-
-Swap Period:
-· block/auto/swap: Infinite.
-· fallback: ~3s.
-· optional: 0s.
-
-After 3 Days:
-· Swaps to font: auto, block, swap.
-· No swap: fallback, optional.
-KEY TAKEAWAYS
-
-· Use block/swap if font consistency is critical (e.g., logos).
-· Use fallback/optional to prioritize fast content visibility.
-· swap is safest for most use cases (avoids long FOIT).
-· optional is ideal for mobile users or unreliable networks.
+- For "optional", if the font is already cached from a previous (faster) visit, it will display instantly, but on a very slow first load the fallback is used and custom font is skipped entirely.
+- For "fallback", the behavior on repeat loads remains the same: fallback font is used unless the custom font loads quickly.
+- For "auto", "block" and "swap", the custom font will eventually replace the fallback/invisible text, but only after the font has fully loaded (3 days in this example).
 */
 
 @font-face {
-  font-family: "open-sans";
+  font-family: myfont;
   src:
-    url("fonts/open-sans/opensans-regular-webfont.woff2") format("woff2"),
-    url("fonts/open-sans/opensans-regular-webfont.woff") format("woff");
+    url("./fonts/open-sans/greatvibes-regular-webfont.woff2") format("woff2"),
+    url("./fonts/open-sans/greatvibes-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: fallback; /* Fallback strategy to minimize FOUT */
-}
-
-/* =========================================================== */
-/*         2. Extra Font Optimization(custom subsetting)       */
-/* Note: Further optimization by compressing fonts. Use tools */
-/* like fontsquirrel.com to optimize size and ensure all characters. */
-/* =========================================================== */
-
-@font-face {
-  font-family: "open-sans";
-  src:
-    url("fonts/open-sans/opensans-bold-webfont.woff2") format("woff2"),
-    url("fonts/open-sans/opensans-bold-webfont.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-
-/* =========================================================== */
-/*            3. Handling FOUT (Flash of Unstyled Text)        */
-/* Note: Occurs when fallback fonts show up until the web font */
-/* is fully loaded. Test by disabling browser cache and reloading. */
-/* =========================================================== */
-
-h1 {
-  font-family:
-    Georgia, "Times New Roman", Times, serif; /* Fallback font for headers */
+  font-display: block;
 }
 
 p {
-  font-family:
-    open-sans, Arial, Helvetica, sans-serif; /* Fallback fonts for paragraphs */
+  font-family: myfont, sans-serif;
 }
