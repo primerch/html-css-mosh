@@ -1,30 +1,26 @@
 /* ======================================================= */
-/*                  1. Base Font Settings                 */
+/*           1. Horizontal Spacing: Letter Spacing        */
+/* Note: Controls spacing between individual characters   */
+/* Values are typically specified in px, em, or rem units */
 /* ======================================================= */
 body {
-  font-size: 5.5rem;
+  letter-spacing: 5px;
 }
 
 /* ======================================================= */
-/*           2. Horizontal Spacing: Letter Spacing        */
-/* Note: Adjusts space between individual letters         */
-/* ======================================================= */
-body {
-  letter-spacing: 0.05rem;
-}
-
-/* ======================================================= */
-/*            3. Horizontal Spacing: Word Spacing         */
-/* Note: Adjusts space between words                      */
+/*            2. Horizontal Spacing: Word Spacing         */
+/* Note: Controls the space between words in text         */
+/* Can be set in px, em, rem, or normal                   */
 /* ======================================================= */
 body {
   word-spacing: 2px;
 }
 
 /* ======================================================= */
-/*            4. Horizontal Spacing: Width                */
-/* Note: Ideal line length is 50-70 characters            */
-/* - 1ch is the width of the character "0" in the font    */
+/*            3. Horizontal Spacing: Width Control        */
+/* Note: Controls text container width for readability    */
+/* The 'ch' unit equals width of '0' in the current font  */
+/* 50-70ch provides optimal reading experience            */
 /* ======================================================= */
 p {
   width: 50ch;
