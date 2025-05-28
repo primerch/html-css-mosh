@@ -1,30 +1,8 @@
-/* =========================================================== */
-/*                2. Reduce HTTP Requests with Sprites         */
-/* =========================================================== */
-/*                                                             */
-/*  Note: Combine multiple images into a single image to        */
-/*        reduce HTTP requests and improve performance.         */
-/*                                                             */
-/* =========================================================== */
-/*                                                             */
-/* Why use CSS Sprites?                                         */
-/* 1. Reduces HTTP requests by combining multiple images into   */
-/*    a single image. This improves page load time and reduces  */
-/*    server overhead.                                          */
-/* 2. Instead of sending multiple requests for separate images, */
-/*    a single request is made for the sprite image.            */
-/*                                                             */
-/* Why not overuse CSS Sprites?                                 */
-/* 1. Large File Size: Combining too many images can make the   */
-/*    sprite file too large and impact performance.             */
-/* 2. Lack of Flexibility: Replacing one image requires         */
-/*    regenerating the entire sprite image.                     */
-/* 3. Best for small images: Use this technique for small       */
-/*    images like logos, icons, or simple graphics.             */
-/*                                                             */
-/* =========================================================== */
+/* 
+  CSS sprite classes: Each class displays a different part of one combined image using background-position.
+  This technique reduces HTTP requests and is ideal for icons or decorative images.
+*/
 
-/* =========================================================== */
 .bg-dishes {
   width: 100px;
   height: 100px;
