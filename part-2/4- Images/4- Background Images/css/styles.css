@@ -46,7 +46,7 @@ body {
   /*  Adjusts the horizontal and vertical position of the image  */
   /*  Default: 0% 0% (top-left); Most Used: center, top, bottom  */
   /* =========================================================== */
-  background-position: top;
+  background-position: 100px 100px;
 
   /* =========================================================== */
   /*                  Background Size                            */
