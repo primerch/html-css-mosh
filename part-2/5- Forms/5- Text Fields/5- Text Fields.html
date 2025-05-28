@@ -8,13 +8,6 @@
     />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="./css/styles.css" rel="stylesheet" />
   </head>
   <body>
     <form>
@@ -22,48 +15,40 @@
       <!--                      1. Text Input Field                  -->
       <!-- Note: Use 'value' to set the initial content of the input  -->
       <!-- =========================================================== -->
-      <input
-        class="input border border-gray-300"
-        type="text"
-        value="programming with reacher"
-      />
+      <input type="text" value="programming with reacher" />
 
       <!-- =========================================================== -->
       <!--                     2. Number Input Field                 -->
       <!-- Note: Use 'placeholder' to provide a hint for the user    -->
       <!-- =========================================================== -->
-      <input
-        class="input border border-gray-300"
-        placeholder="number"
-        type="number"
-      />
+      <input placeholder="number" type="number" />
 
       <!-- =========================================================== -->
       <!--                    3. Password Input Field                -->
       <!-- Note: Use 'readonly' to prevent changes to the input      -->
       <!-- =========================================================== -->
-      <input class="input border border-gray-300" readonly type="password" />
+      <input readonly type="password" />
 
       <!-- =========================================================== -->
       <!--                     4. Date Input Field                  -->
       <!-- Note: Use 'disabled' to prevent interaction, and the value will not be sent to the server -->
       <!-- =========================================================== -->
-      <input class="input border border-gray-300" disabled type="date" />
+      <input disabled type="date" />
 
       <!-- =========================================================== -->
       <!--                     5. Email Input Field                 -->
       <!-- Note: Use 'maxlength' to limit the number of characters  -->
       <!-- =========================================================== -->
-      <input class="input border border-gray-300" maxlength="10" type="email" />
+      <input maxlength="10" type="email" />
 
       <!-- =========================================================== -->
       <!--                     6. Textarea Field                    -->
       <!-- Note: Use 'autofocus' to automatically focus this element when the page loads -->
       <!-- Note: Textareas don't have a 'value' property; the content is entered directly in the box -->
       <!-- =========================================================== -->
-      <textarea autofocus class="border border-gray-300">
-        Doesn't have the value property, need to write content in this box
-      </textarea>
+      <textarea autofocus>
+Doesn't have the value property, need to write content in this box</textarea
+      >
     </form>
   </body>
 </html>
