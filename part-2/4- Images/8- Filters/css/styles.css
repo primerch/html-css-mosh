@@ -1,57 +1,25 @@
+/* ===============================================
+   CSS Filter Functions - Categories & Summary
+   1. Color Adjustment Filters:
+      - grayscale()   : Black & white effect
+      - sepia()       : Old-photo brown tint
+      - hue-rotate()  : Changes all the colors (shifts hue)
+      - brightness()  : Brighter or darker
+      - contrast()    : More or less difference in light/dark
+      - opacity()     : See-through effect
+
+   2. Blur & Visual Effects:
+      - blur()        : Makes it blurry
+      - drop-shadow() : Adds a shadow behind the object
+
+   Usage: Combine multiple filters in a single 'filter:' property, separated by spaces.
+   Example:
+     filter: grayscale(0.7) blur(3px) brightness(1) contrast(0.5) sepia(0.5)
+             drop-shadow(10px 10px 10px rgba(0,0,0,0.8)) opacity(0.5) hue-rotate(90deg);
+   =============================================== */
+
 .meal {
-    /* =========================================================== */
-    /*                   1. grayscale(value)                      */
-    /* Note: 0 (no grayscale) to 1 (full grayscale)                */
-    /* Possible Values: 0 to 1                                     */
-    /* =========================================================== */
-    filter: grayscale(0.7); /* 70% grayscale */
-
-    /* =========================================================== */
-    /*                      2. blur(value)                        */
-    /* Note: Applies blur, value in px. Higher value = more blur.  */
-    /* Possible Values: e.g., 5px, 10px, 50px                       */
-    /* =========================================================== */
-blur(3 px);
-
-    /* =========================================================== */
-    /*                3. brightness(value)                         */
-    /* Note: <1 (darker), >1 (brighter), 1 is normal.              */
-    /* Possible Values: e.g., 0.5, 1, 2                            */
-    /* =========================================================== */
-brightness(1);
-
-    /* =========================================================== */
-    /*                   4. contrast(value)                        */
-    /* Note: <1 (lower), >1 (higher), 1 is normal.                 */
-    /* Possible Values: e.g., 0.5, 1, 1.5                          */
-    /* =========================================================== */
-contrast(0.5);
-
-    /* =========================================================== */
-    /*                     5. sepia(value)                        */
-    /* Note: 0 (no sepia) to 1 (full sepia)                        */
-    /* Possible Values: 0 to 1                                     */
-    /* =========================================================== */
-sepia(0.5);
-
-    /* =========================================================== */
-    /*            6. drop-shadow(h-shadow v-shadow blur color)     */
-    /* Note: h-shadow, v-shadow, blur (px), color (e.g., rgb).     */
-    /* Possible Values: e.g., 10px 10px 5px rgba(0, 0, 0, 0.8)     */
-    /* =========================================================== */
-drop-shadow(10 px 10 px 10 px rgba(0, 0, 0, 0.8));
-
-    /* =========================================================== */
-    /*                      7. opacity(value)                     */
-    /* Note: 0 (transparent) to 1 (opaque)                         */
-    /* Possible Values: 0 to 1                                     */
-    /* =========================================================== */
-opacity(0.5);
-
-    /* =========================================================== */
-    /*                8. hue-rotate(angle)                         */
-    /* Note: Rotates hue by angle in degrees (deg).                */
-    /* Possible Values: e.g., 90deg, 180deg, 360deg                 */
-    /* =========================================================== */
-hue-rotate(90 deg);
+  filter: grayscale(0.7) blur(3px) brightness(1) contrast(0.5) sepia(0.5)
+    drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.8)) opacity(0.5)
+    hue-rotate(90deg);
 }
