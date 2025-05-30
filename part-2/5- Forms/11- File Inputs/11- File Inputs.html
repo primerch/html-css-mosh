@@ -11,25 +11,11 @@
   </head>
   <body>
     <form>
-      <!-- =========================================================== -->
-      <!--                        1. File Input                      -->
-      <!-- Note: The 'file' input allows the user to select files from their system -->
-      <!-- =========================================================== -->
-
-      <!-- =========================================================== -->
-      <!--          2. Allow Multiple File Selection (multiple)      -->
-      <!-- Note: Use 'multiple' to allow the user to select multiple files -->
-      <!-- =========================================================== -->
-
-      <!-- =========================================================== -->
-      <!--         3. Restrict File Types (accept)                   -->
-      <!-- Note: Use the 'accept' attribute to specify acceptable file types -->
-      <!-- Note: File types are separated by commas, e.g., '.jpg,.png' for images -->
-      <!-- Note: Use patterns like 'image/*' or 'audio/*' to allow all images or audios -->
-      <!-- =========================================================== -->
-
-      <input type="file" multiple accept=".jpg,.png" />
-      <input type="file" multiple accept="audio/*" />
+      <!-- File input: select files from device -->
+      <!-- 'multiple' allows choosing more than one file -->
+      <!-- 'accept' restricts file types (e.g., '.jpg,.png', 'audio/*') -->
+      <input accept=".jpg,.png" multiple type="file" />
+      <input accept="audio/*" multiple type="file" />
     </form>
   </body>
 </html>
