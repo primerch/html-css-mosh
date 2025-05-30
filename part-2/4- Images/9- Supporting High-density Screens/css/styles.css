@@ -3,23 +3,40 @@
 }
 
 /* ================================================ */
-/*               Understanding DPR                  */
+/*         What is Device Pixel Ratio (DPR)?        */
 /* ================================================ */
 /*
-1. Physical Resolution:
-   - Example: iPhone 4 has a screen resolution of 960 × 640 pixels.
+1. Physical Resolution (Real Pixels):
+   - The actual number of tiny dots (pixels) that make up the screen.
+   - Example: iPhone 4 has 960 pixels tall × 640 pixels wide.
 
 2. Logical Resolution (CSS Pixels):
-   - The same iPhone 4 is 480 × 320 in CSS pixels.
+   - The size the website thinks the screen is—this is what you use in CSS and layouts.
+   - Makes designing sites much easier.
+   - Example: On iPhone 4, the logical resolution is 480 × 320 pixels.
 
 3. Device Pixel Ratio (DPR):
+   - This tells you how many real pixels fit into one CSS pixel.
    - Formula: DPR = Physical Pixels / Logical Pixels
-   - Example: 960 / 480 = 2 (DPR of 2)
+   - Example: 960 / 480 = 2 (So, 2 real pixels are used for every CSS pixel)
 
-4. Responsive Images with `srcset`:
-   - If screen width = 400px:
-     - @3x → 1200px (better for high-DPR screens)
-     - @2x → 800px
-     - @1x → 400px
-   - The browser automatically picks the best image.
+4. How Images Work with DPR (`srcset`):
+   - To look sharp on all screens, you need to give the browser different sizes of the same image.
+   - If your image space is 400px wide (in CSS):
+     - @1x → Use a 400px wide image for regular screens (DPR=1)
+     - @2x → Use an 800px wide image for high-res screens (DPR=2)
+     - @3x → Use a 1200px wide image for super sharp screens (DPR=3)
+   - The browser picks the best image size for each screen automatically.
+
+5. Why provide different image sizes?
+   - If you only supply a 400px image, it will look blurry on @2x and @3x screens.
+   - By giving 400px, 800px, and 1200px versions, every device gets an image that matches its screen’s sharpness.
+
+**Result:**
+   - All devices will show a sharp, non-blurry image.
+   - The image will look the same quality (crisp and clear) on every screen.
+
+**Tip:**
+   - Always offer images for 1x, 2x, and 3x screens using the `srcset` attribute.
+   - This gives everyone the best experience—no blurry images!
 */
