@@ -1,18 +1,8 @@
-/*
-Color Palette:
-A color palette is a defined set of colors used consistently throughout a website or application to maintain visual harmony and brand identity.
-
-- Primary Color: Main branding color, commonly used for primary actions, buttons, links, and key visual elements.
-- Secondary Color: Complements the primary color; typically used to support the design by highlighting less dominant elements or areas.
-- Accent Color: A distinct, high-contrast color used sparingly to draw attention to important features or calls-to-action.
-- Headings Color: Color specifically chosen for use on titles, headings, and prominent text elements.
-- Body Color: Standard color applied to general text like paragraphs, captions, and content.
-
-*/
 :root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
   --color-accent: #ff3400;
-  --color-headings: #1b0760;
+
+  --color-headings: #1b071b;
   --color-body: #918ca4;
 }
