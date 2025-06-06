@@ -9,7 +9,7 @@
 /* Typography */
 
 html {
-  /* 62.5% of base browser font size (16px) equals 10px. This simplifies the conversion between rem units and pixels (e.g., 1.5rem = 15px). */
+  /* 62.5% of 16px = 10px */
   font-size: 62.5%;
 }
 
@@ -89,37 +89,27 @@ a {
   }
 }
 
-/* 1. Following Object-Oriented CSS (OOCSS) principles, define a generic badge component (.badge) to specify repeated structural styling. Modifiers like specific colors and sizes are handled separately using BEM methodology. */
+/* Badges */
+
 .badge {
-  /* 2. Specify rounded corners clearly (border-radius) to visually distinguish badges, creating a more appealing UI. */
   border-radius: 20px;
-
-  /* 3. Add padding to badges for comfortable spacing around content, enhancing readability and aesthetic appearance. */
-  padding: 0.5rem 2rem;
-
-  /* 4. Set font weight to bold (600) to ensure badges stand out clearly on various UI backgrounds. */
-  font-weight: 600;
-
-  /* 5. Prevent text wrapping within badges to ensure consistency and maintain visual clarity. Content stays on a single line, regardless of badge content length. */
-  white-space: nowrap;
-
-  /* 7. Define default font size for badges as a starting point for general badge structures. */
   font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
 }
-
-/* 6. Use the BEM naming convention clearly (Block__Element--Modifier). These modifier classes (.badge--primary and .badge--secondary) define distinct visual appearances ("skins") applied to the generic badge structure by changing background and text colors. */
 
 .badge--primary {
   background: var(--color-primary);
-  color: #fff; /* Text color set explicitly to white for visibility against primary color background */
+  color: #fff;
 }
 
 .badge--secondary {
   background: var(--color-secondary);
-  color: #fff; /* Text color set explicitly to white for visibility against secondary color background */
+  color: #fff;
 }
 
-.badge-small {
+.badge--small {
   font-size: 1.6rem;
 }
 
