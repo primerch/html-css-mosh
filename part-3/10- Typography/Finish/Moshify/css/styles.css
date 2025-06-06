@@ -1,3 +1,4 @@
+/* ===== COLOR PALETTE ===== */
 :root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
@@ -6,117 +7,55 @@
   --color-body: #918ca4;
 }
 
-/*
-7. Set the base font-size for the root html element.
-Reason: Common practice to set it at 62.5% for easy calculations.
-- Default browser font-size is typically 16px, thus 62.5% * 16px = 10px.
-- Simplifies sizing: 1rem equals 10px.
-*/
+/* ===== TYPOGRAPHY ===== */
 html {
   font-size: 62.5%;
 }
 
 body {
-  /*
-  2. Define primary font-family.
-  Reason: External Google font "Inter" provides consistent branding and modern appearance. Arial and Helvetica are universally available fallbacks.
-  */
   font-family: Inter, Arial, Helvetica, sans-serif;
-
-  /*
-  4. Set default body text color.
-  Reason: Ensures readability and maintains consistency with the design's color theme.
-  */
   color: var(--color-body);
-
-  /*
-  9. Set body font-size for mobile view.
-  Reason: Matches the design mockup, ensuring readability on smaller devices.
-  Calculation: 2.4rem = 24px (as 1rem = 10px).
-  */
   font-size: 2.4rem;
-
-  /*
-  10. Adjust line-height for readability.
-  Reason: Increases space between text lines for better readability.
-  Calculation: line-height 1.5 = 36px (24px * 1.5).
-  */
   line-height: 1.5;
 }
 
 h1,
 h2,
 h3 {
-  /*
-  5. Set heading colors explicitly.
-  Reason: Visually distinguishes headings from body content, maintaining a clear hierarchy and design consistency.
-  */
   color: var(--color-headings);
-
-  /*
-  11. Reduce bottom margin on headings.
-  Reason: Original spacing appeared visually too large due to built-in letter spacing below headings; smaller margin improves overall layout and vertical rhythm.
-  */
   margin-bottom: 1rem;
 }
 
 h1 {
-  /*
-  6. Set font-size for main heading (h1).
-  Reason: Precisely matches the Photoshop mockup design (70px).
-  Calculation: 7rem = 70px (since 1rem = 10px).
-  */
   font-size: 7rem;
 }
 
 h2 {
-  /*
-  8. Set font-size for secondary headings (h2).
-  Reason: Establishes clear visual hierarchy based on the mockup design.
-  Calculation: 4rem = 40px.
-  */
   font-size: 4rem;
 }
 
 h3 {
-  /*
-  8. Set font-size for tertiary headings (h3).
-  Reason: Clearly differentiates this level from higher headings and paragraphs according to the mockup.
-  Calculation: 3rem = 30px.
-  */
   font-size: 3rem;
 }
 
 p {
-  /*
-  12. Remove paragraph top margin to avoid margin-collapsing.
-  Reason: Default paragraph margins can collapse with heading bottom margins; setting margin-top to 0 makes spacing predictable and solely controlled by heading margins.
-  */
   margin-top: 0;
 }
 
-/*
-13. Media Query for Desktop screens (min-width: 1024px).
-Reason: Implements responsive design, adjusting typography to suit larger screen sizes and improve layout readability.
-*/
 @media screen and (min-width: 1024px) {
   body {
-    /* Decrease body font-size slightly for better readability on larger screens (1.8rem = 18px). */
     font-size: 1.8rem;
   }
 
   h1 {
-    /* Increase main heading size to enhance visual impact for desktop users (8rem = 80px). */
     font-size: 8rem;
   }
 
   h2 {
-    /* Maintain consistency in secondary heading size for stable visual hierarchy (4rem = 40px). */
     font-size: 4rem;
   }
 
   h3 {
-    /* Slightly reduce h3 heading size on desktop, clearly separating hierarchical levels (2.4rem = 24px). */
     font-size: 2.4rem;
   }
 }
