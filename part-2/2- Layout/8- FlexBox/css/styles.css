@@ -26,8 +26,8 @@ html {
 /* ==================================================================== */
 
 .gallery {
-  display: flex;
   border: 3px solid grey;
+  display: flex;
   height: 90vh;
 }
 
@@ -92,6 +92,23 @@ html {
 /* Sets the initial size of the flex item                               */
 /* Default: auto (uses width/height if set, otherwise content size)     */
 /* Values: auto, <length> (px, rem, %, etc.)                            */
+
+/* ==================================================================== */
+/*                            7. flex-basis                             */
+/* Sets the initial size of the flex item                               */
+/* Default: auto (uses width/height if set, otherwise content size)     */
+/* Values: auto, <length> (px, rem, %, etc.)                            */
+/* ==================================================================== */
+/* When you use flex-basis: auto (the default), the browser uses the    */
+/* item's width (for flex-direction: row) or height (for column) as the */
+/* base size for layout.                                                */
+/* If width or height is set, flex-basis: auto will take that into      */
+/* account before distributing space.                                   */
+/* If you give flex-basis an explicit value (like 100px), it will       */
+/* override width or height for sizing along the main axis.             */
+/* flex-basis: 0 means start from zero and share all extra space.       */
+/* So, flex-basis: auto means "use item's width/height property or      */
+/* content size as the base size for flex calculations".                */
 /* ==================================================================== */
 
 /* ==================================================================== */
